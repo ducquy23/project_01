@@ -16,10 +16,10 @@
  */
 
 $db = array(
-    'hostname' => 'localhost',
-    'username' => 'root',
-    'password' => 'vananh@2020',
-    'database' => 'duan1_shop_db',
+    'hostname' => 'localhost', // hostnam của database muốn kết nối
+    'username' => 'root', // username của database muốn kết nối
+    'password' => '', // password của databae muốn kết nối
+    'database' => 'du_an_01', // tên database muốn kết nối
 );
 
 

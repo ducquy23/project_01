@@ -6,7 +6,7 @@
  * --------------------------------------------------------------------
  */
 
-$app_path = dirname(__FILE__);
+$app_path = dirname(__FILE__); // thư mục hiện tại khi mở folder
 define('APPPATH', $app_path);
 /*
  * --------------------------------------------------------------------
@@ -15,6 +15,7 @@ define('APPPATH', $app_path);
  */
 $core_folder = 'core';
 define('COREPATH', APPPATH.DIRECTORY_SEPARATOR.$core_folder);
+// project/core
 
 /*
  * --------------------------------------------------------------------
@@ -23,8 +24,6 @@ define('COREPATH', APPPATH.DIRECTORY_SEPARATOR.$core_folder);
  */
 $modules_folder = 'modules';
 define('MODULESPATH', APPPATH.DIRECTORY_SEPARATOR.$modules_folder);
-
-
 /*
  * --------------------------------------------------------------------
  * helper path
@@ -60,4 +59,5 @@ define('LAYOUTPATH', APPPATH.DIRECTORY_SEPARATOR.$layout_folder);
 $config_folder= 'config';
 define('CONFIGPATH', APPPATH.DIRECTORY_SEPARATOR.$config_folder);
 
-require COREPATH.DIRECTORY_SEPARATOR.'appload.php';
+require COREPATH.DIRECTORY_SEPARATOR.'appload.php'; //require file appload.php vào
+

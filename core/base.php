@@ -80,9 +80,9 @@ function load($type, $name) {
 
 function call_function($list_function = array()) {
     if (is_array($list_function)) {
-        foreach ($list_function as $f) {
-            if (function_exists($f())) {
-                $f();
+        foreach ($list_function as $function) {
+            if (function_exists($function())) {
+                $function();
             }
         }
     }
@@ -92,6 +92,7 @@ function load_view($name, $data_send = array()) {
     global $data;
     $data = $data_send;
     $path = MODULESPATH . DIRECTORY_SEPARATOR . get_role() . DIRECTORY_SEPARATOR .  get_module() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . $name . 'View.php';
+    // $path = modules/client/home/views/indexViews.php
     if (file_exists($path)) {
         if (is_array($data)) {
             foreach ($data as $key_data => $v_data) {
@@ -104,7 +105,7 @@ function load_view($name, $data_send = array()) {
     }
 }
 
-function load_model($name) {
+function load_model($name) { // modules/client/home/models/createModel.php
     $path = MODULESPATH . DIRECTORY_SEPARATOR . get_role() . DIRECTORY_SEPARATOR .  get_module() . DIRECTORY_SEPARATOR . 'models' . DIRECTORY_SEPARATOR . $name . 'Model.php';
     if (file_exists($path)) {
         require $path;
@@ -153,42 +154,7 @@ function get_footer($name = '') {
     }
 }
 
-function get_sidebar($name = '') {
-    global $data;
-    if (empty($name)) {
-        $name = 'sidebar';
-    } else {
-        $name = "sidebar-{$name}";
-    }
-    $path = LAYOUTPATH . DIRECTORY_SEPARATOR . $name . '_' . get_role() . '.php';
-    if (file_exists($path)) {
-        if (is_array($data)) {
-            foreach ($data as $key => $a) {
-                $$key = $a;
-            }
-        }
-        require $path;
-    } else {
-        echo "Không tìm thấy {$path}";
-    }
-}
-
-function get_template_part($name) {
-    global $data;
-    if (empty($name))
-        return FALSE;
-    $path = LAYOUTPATH . DIRECTORY_SEPARATOR . "template-{$name}.php";
-    if (file_exists($path)) {
-        foreach ($data as $key => $a) {
-            $$key = $a;
-        }
-        require $path;
-    } else {
-        echo "Không tìm thấy {$path}";
-    }
-}
-
-function push_notification($type, $msgs) {
+function push_notification($type, $msgs) { //success | ['Xóa danh mục sản phẩm thàn công']
     if (!isset($_SESSION["notification"])) $_SESSION["notification"] = [];
     $data = [];
     $data["type"] = $type;

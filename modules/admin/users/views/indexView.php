@@ -1,44 +1,43 @@
-<?php
-
-//show_array($list_users);
+<?php get_header('', 'Danh sách người dùng');
 ?>
-<html>
-    <head>
-        <title>Danh sách thành viên</title>
-        <meta charset="utf8"/>
-    </head>
-    <body>
-        <h1>Danh sách thành viên</h1>
-        <table>
-            <thead>
+<div class="content-main">
+    <h3 class="title-content">Quản lý user</h3>
+    <div class="list-product">
+        <h4 class="list">Danh sách sản phẩm</h4>
+        <div class="search-product">
+            <a href="?ctr=add_user"><button class="btn btn-success">Add New Product</button></a>
+        </div>
+    </div>
+    <table class="table-bordered table">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>User Fullname</th>
+                <th>User Email</th>
+                <th>User Password</th>
+                <th>User role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($list_user as $values) : ?>
                 <tr>
-                    <td>STT</td>
-                    <td>Tên</td>
-                    <td>Email</td>
-                    <td>Tuổi</td>
-                    <td>Thu nhập</td>
+                    <td><?php echo $values['id'] ?></td>
+                    <td><?php echo $values['fullname'] ?></td>
+                    <td><?php echo $values['email'] ?></td>
+                    <td><?php echo $values['password'] ?></td>
+                    <td><?php echo ($values['role'] == 1) ? "User" : 'Admin'?></td>
+                    <td style="text-align: center;">
+                        <button class="btn btn-success">Update</button>
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                <?php
-                if (!empty($list_users)) {
-                    $t = 0;
-                    foreach ($list_users as $user) {
-                        $t ++;
-                        ?>
-                        <tr>
-                            <td><?php echo $t; ?></td>
-                            <td><?php echo $user['fullname'] ?></td>
-                            <td><?php echo $user['email'] ?></td>
-                            <td><?php echo $user['age'] ?></td>
-                            <td><?php echo currency_format($user['earn'], '$'); ?></td>
-                        </tr>
-                        <?php
-                    }
-                }
-                ?>
+            <?php endforeach; ?>
 
-            </tbody>
-        </table>
-    </body>
-</html>
+        </tbody>
+    </table>
+</div>
+</article>
+</div>
+<div class="clear-both"></div>
+<?php get_footer('', 'Danh sách người dùng') ?>

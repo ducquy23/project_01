@@ -1,15 +1,13 @@
 <?php
-defined('APPPATH') OR exit('Không được quyền truy cập phần này');
+defined('APPPATH') OR exit('Không được quyền truy cập phần này'); 
+//hàm defined kiểm tra xem hằng số APPPATH nó có tồn tại không 
+// nếu tồn tại thì chạy trang này,nếu không thì nó in ra "Không được quyền truy cập trang này";
 
 // Include file config/database
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'database.php';
 
 // Include file config/config
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'config.php'; 
-
-// Include file config/email
-require CONFIGPATH . DIRECTORY_SEPARATOR . 'email.php';
-
 // Include file config/autoload
 require CONFIGPATH . DIRECTORY_SEPARATOR . 'autoload.php';
 
@@ -22,7 +20,10 @@ require COREPATH . DIRECTORY_SEPARATOR . 'base.php';
 
 
 
-
+// $autoload = array(
+//     'lib' => [],
+//     'helper' => ['data']
+// );
 if (is_array($autoload)) {
     foreach ($autoload as $type => $list_auto) {
         if (!empty($list_auto)) {

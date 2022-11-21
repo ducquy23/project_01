@@ -11,13 +11,12 @@
  * 
  */
 
-$config['base_url'] = "http://localhost/back-end/lesson/section-26/projectmvc.vn/";
+$config['base_url'] = "http://localhost/desktop/Project_01";
 
-
-$config['default_role'] = 'client';
-$config['default_module'] = 'home';
-$config['default_controller'] = 'index';
-$config['default_action'] = 'index';
+$config['default_role'] = 'client'; // mặc định vai trò là client
+$config['default_module'] = 'home'; // mặc định module là home
+$config['default_controller'] = 'index'; // mặc định controller là index
+$config['default_action'] = 'index';    // mặc định action là index
 
 
 
