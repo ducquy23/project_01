@@ -44,9 +44,8 @@
                     <a href="?role=client&mod=home"><img src="/public/images/img_client/logo_header.png" alt=""></a>
                 </div>
                 <ul class="header__listCategory">
-                    <?php foreach ($home_cate_parent as $values) : ?>
                         <li>
-                            <a href="?role=client&mod=home_collections"><?php echo $values['name'] ?></a>
+                            <a href="?role=client&mod=home_collections">Giày</a>
                             <a href=""><i class='bx bx-chevron-down'></i></a>
                             <ul class="header__submenu">
                                 <li><a href="">Giày đá bóng</a></li>
@@ -55,8 +54,7 @@
                                 <li><a href="">Giày bóng rổ</a></li>
                             </ul>
                         </li>
-                    <?php endforeach; ?>
-                    <!-- <li>
+                    <li>
                             <a href="">QUẦN ÁO</a>
                             <a href=""><i class='bx bx-chevron-down'></i></a>
                             <ul class="header__submenu">
@@ -84,7 +82,7 @@
                                 <li><a href="">Balo</a></li>
                                 <li><a href="">Vớ</a></li>
                             </ul>
-                        </li> -->
+                        </li>
                 </ul>
                 <div class="header__search">
                     <input type="text" placeholder="Tìm kiếm sản phẩm">
