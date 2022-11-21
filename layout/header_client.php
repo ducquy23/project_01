@@ -31,7 +31,7 @@
         <div class="header">
             <div class="header__nav">
                 <ul class="header__category">
-                    <li><a href="">Tin tức</a></li>
+                    <li><a href="">Tin tức test</a></li>
                     <li><a href="">Cửa hàng</a></li>
                     <li><a href="">Liên hệ</a></li>
                     <li>
