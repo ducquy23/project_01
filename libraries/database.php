@@ -82,7 +82,7 @@ function db_update($table, $data, $where) {
             SET $sql
             WHERE $where
    ");
-    return mysqli_affected_rows($conn);
+    // return mysqli_affected_rows($conn);
 }
 
 function db_delete($table, $where) {

@@ -4,20 +4,20 @@
     <form action="?role=admin&mod=users&action=update" enctype="multipart/form-data" class="container" method="POST">
         <div class="form-group">
             <label for="name">Tên user:</label>
-            <input type="text" name="username" class="form-control" placeholder="Enter Name" id="name" value="<?php echo $user['username'] ?>">
-            <input type="hidden" name="id" value="<?php echo $user['id'] ?>">
+            <input type="text" name="username" class="form-control" placeholder="Enter Name" id="name" value="">
+            <input type="hidden" name="id" value="">
         </div>
         <div class="form-group">
             <label for="pwd">Password:</label>
-            <input type="text" name="password" class="form-control" placeholder="Enter password" id="pwd" value="<?php echo $user['password'] ?>" >
+            <input type="text" name="password" class="form-control" placeholder="Enter password" id="pwd" value="" >
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" name="email" class="form-control" placeholder="Enter email" id="email" value="<?php echo $user['email'] ?>" >
+            <input type="email" name="email" class="form-control" placeholder="Enter email" id="email" value="" >
         </div>
         <div class="form-group">
             <label for="img">Ảnh sản phẩm</label> <br>
-            <img src="/public/images/<?php echo $user['avatar'] ?>" alt="" style="width: 100px;margin-bottom: 10px;"> <br>
+            <img src="/public/images/<?php ?>" alt="" style="width: 100px;margin-bottom: 10px;"> <br>
             <input type="file" name="img" id="img">
         </div>
         <div class="form-submit">
