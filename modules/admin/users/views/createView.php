@@ -1,5 +1,5 @@
 
-<?php get_header('', 'Tạo user') ?>
+<?php get_header('', 'Trang thêm mới user') ?>
 <div class="content-main">
     <h3>Thêm mới User</h3>
     <form action="?role=admin&mod=users&action=create" enctype="multipart/form-data" class="container" method="POST">
@@ -15,10 +15,6 @@
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" name="email" class="form-control" placeholder="Enter email" id="email">
-        </div>
-        <div class="form-group">
-            <label for="img">Ảnh sản phẩm</label> <br>
-            <input type="file" name="img" id="img">
         </div>
         <div class="form-submit">
             <button type="submit" class="btn btn-success" name="submit">Add User</button>
