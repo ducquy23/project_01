@@ -26,13 +26,15 @@ function updateAction() {
     load_view('update');
 }
 function createPostAction() {
-    $name = $_POST['name'];
-    if (empty($name)) {
-        push_notification('danger', ['Vui lòng nhập vào tên danh mục']);
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    if (empty($fullname) || empty($email) || empty($password)) {
+        push_notification('danger', ['Vui lòng nhập đầy đủ thông tin']);
         header('Location: /?role=admin&mod=users&action=create');
         die();
     }
-    create_categories($name);
+    create_users($fullname,$email,$password);
     push_notification('success', ['Tạo mới danh mục sản phẩm thành công']);
     header('Location: /?role=admin&mod=users');
 }
