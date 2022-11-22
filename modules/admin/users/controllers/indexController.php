@@ -13,7 +13,29 @@ function indexAction() {
     $data['list_user'] = get_list_users();
     load_view('index',$data);
 }
-
+function deleteAction() {
+    $id = $_GET['id'];
+    delete_users($id);
+    push_notification('success', ['Xoá danh mục sản phẩm thành công']);
+    header("location:?role=admin&mod=users");
+}
+function createAction() {
+    load_view('create');
+}
+function updateAction() {
+    load_view('update');
+}
+function createPostAction() {
+    $name = $_POST['name'];
+    if (empty($name)) {
+        push_notification('danger', ['Vui lòng nhập vào tên danh mục']);
+        header('Location: /?role=admin&mod=users&action=create');
+        die();
+    }
+    create_categories($name);
+    push_notification('success', ['Tạo mới danh mục sản phẩm thành công']);
+    header('Location: /?role=admin&mod=users');
+}
 // function addAction() {
 //     echo "Thêm dữ liệu";
 // }

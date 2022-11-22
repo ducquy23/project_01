@@ -24,7 +24,7 @@
                 <h3 class="card-title">Form thông tin sản phẩm mới</h3>
             </div>
             <!--begin::Form-->
-            <form method="POST" action="">
+            <form method="POST" action="?role=admin&mod=production&action=create">
                 <div class="card-body">
                     <div class="row">
                         <div class="col col-12">

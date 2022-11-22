@@ -8,9 +8,20 @@ function construct() {
 function indexAction() {
     $data['productions'] = get_list_productions();
     load_view('index', $data);
-    // load_view('index');
+    
 }
-
+function deleteAction() {
+    $id = $_GET['id'];
+    delete_productions($id);
+    push_notification('success', ['Xoá danh mục sản phẩm thành công']);
+    header("location:?role=admin&mod=production");
+}
+function createAction() {
+    load_view('create');
+}
+function updateAction() {
+    load_view('update');
+}
 // function createAction() {
 //     $data['categories'] = get_list_categories();
 //     load_view('create', $data);

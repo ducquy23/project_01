@@ -5,7 +5,7 @@
     <div class="list-product">
         <h4 class="list">Danh sách sản phẩm</h4>
         <div class="search-product">
-            <a href="?ctr=add_user"><button class="btn btn-success">Add New Product</button></a>
+            <a href="?role=admin&mod=users&action=create"><button class="btn btn-success">Add New Product</button></a>
         </div>
     </div>
     <table class="table-bordered table">
@@ -28,8 +28,8 @@
                     <td><?php echo $values['password'] ?></td>
                     <td><?php echo ($values['role'] == 1) ? "User" : 'Admin'?></td>
                     <td style="text-align: center;">
-                        <button class="btn btn-success">Update</button>
-                        <button class="btn btn-danger">Delete</button>
+                    <a href="?role=admin&mod=users&action=update&id=<?php echo $values['id'] ?>"><button class="btn btn-success">Update</button></a>
+                        <a href="?role=admin&mod=users&action=delete&id=<?php echo $values['id'] ?>" onclick="return confirm('Bạn có muốn xóa không')"><button class="btn btn-danger">Delete</button></a>
                     </td>
                 </tr>
             <?php endforeach; ?>

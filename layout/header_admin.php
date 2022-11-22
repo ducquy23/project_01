@@ -48,11 +48,11 @@ $notification = get_notification();
                         </li>
                         <li>
                             <a href=""><img src="/public/images/img_admin/qldm.png" alt=""></a>
-                            <span><a href="?ctr=ql_comment">Quản lý bình luận</a></span>
+                            <span><a href="?role=admin&mod=comments">Quản lý bình luận</a></span>
                         </li>
                         <li>
                             <a href=""><img src="/public/images/img_admin/thongke.png" alt=""></a>
-                            <span><a href="?ctr=ql_thongke">Thống kê</a></span>
+                            <span><a href="?role=admin&mod=thongke">Thống kê</a></span>
                         </li>
                     </ul>
                 </div>

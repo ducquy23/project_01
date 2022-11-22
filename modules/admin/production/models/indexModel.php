@@ -3,6 +3,11 @@ function get_list_productions() {
     $result = db_fetch_array("SELECT * FROM `products`");
     return $result;
 }
+function delete_productions($id)
+{
+    db_delete('products', "id = $id");
+    return true;
+}
 
 // function get_one_production($id) {
 //     $result = db_fetch_row("SELECT * FROM `productions` WHERE c.id = $id");

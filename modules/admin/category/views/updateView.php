@@ -2,7 +2,7 @@
 
 <div class="content-main">
     <h3>Update Catagories</h3>
-    <form action="?ctr=save_update_cata" enctype="multipart/form-data" class="container" method="POST">
+    <form action="?role=admin&mod=category&action=update" enctype="multipart/form-data" class="container" method="POST">
         <div class="form-group">
             <label for="name">Tên catagories:</label>
             <input type="text" name="cata_name" class="form-control" placeholder="Enter Catagories" id="name" value="">
