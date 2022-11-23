@@ -27,48 +27,46 @@
             <h2>BÓNG</h2>
         </div>
         <ul class="main__list">
-            <li><a href="#" class="item__football active">Bóng đá</a></li>
-            <li><a href="#" class="item__football">Bóng chuyền</a></li>
-            <li><a href="#" class="item__football">Bóng rổ</a></li>
-            <li><a href="#" class="item__football">Bóng Futsal</a></li>
+            <?php foreach ($home_list_cate_football as $values) : ?>
+                <li><a href="#" class="item__football"><?php echo $values['name'] ?></a></li>
+            <?php endforeach; ?>
         </ul>
     </div>
     <div class="main__listProduct">
-        <?php for ($i = 0; $i < 8; $i++) : ?>
+        <?php foreach ($home_cate_football as $values) : ?>
             <div class="main__product">
-                <a href="?ctr=detail_product"><img src="/public/images/img_client/football_01.png" alt="" class="img_product"></a>
-                <div class="title_product">BÓNG ĐÁ FIFA QUALITY PRO SEA GAMES 31 UHV 2.07</div>
-                <div href="" class="price_product">2,250,000<sup><u>đ</u></sup></div>
+                <a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><img src="/public/uploads/<?php echo $values['thumbnail'] ?>" alt="" class="img_product"></a>
+                <div class="title_product"><a href="?role=client&mod=home_detail&id=<?php echo $values['id']?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></div>
+                <div href="" class="price_product"><?php echo number_format($values['price']) ?><sup><u>đ</u></sup></div>
                 <div class="main__btn">
                     <button class="btn-add">Thêm vào giỏ</button>
                     <button class="btn-buy">Mua ngay</button>
                 </div>
             </div>
-        <?php endfor; ?>
+        <?php endforeach; ?>
     </div>
     <div class="main__football">
         <div class="main__name">
-            <h2>GIÀY THỂ THAO</h2>
+            <h2>GIÀY</h2>
         </div>
         <ul class="main__list">
-            <li><a href="#" class="item__shoes active">Giày đá bóng</a></li>
-            <li><a href="#" class="item__shoes">Giày chạy</a></li>
-            <li><a href="#" class="item__shoes">Giày cầu lông</a></li>
-            <li><a href="#" class="item__shoes">Giày thời trang</a></li>
+            <?php foreach ($home_list_cate_shoes as $values) : ?>
+                <li><a href="#" class="item__shoes"><?php echo $values['name'] ?></a></li>
+            <?php endforeach; ?>
         </ul>
     </div>
     <div class="main__listProduct">
-            <?php foreach($home_cate_shoes as $key => $values): ?>
+        <?php foreach ($home_cate_shoes as $key => $values) : ?>
             <div class="main__product">
-                <a href="?ctr=detail_product"><img src="/public/images/img_client/<?php echo $values['thumbnail'] ?>" alt="" class="img_product"></a>
-                <div class="title_product"><?php echo $values['title'] ?></div>
+                <a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><img src="/public/uploads/<?php echo $values['thumbnail'] ?>" alt="" class="img_product"></a>
+                <div class="title_product"><a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></div>
                 <div class="price_product"><?php echo number_format($values['price'],) ?><sup><u>đ</u></sup></div>
                 <div class="main__btn">
                     <button class="btn-add">Thêm vào giỏ</button>
                     <button class="btn-buy">Mua ngay</button>
                 </div>
             </div>
-             <?php endforeach; ?> 
+        <?php endforeach; ?>
     </div>
     <div class="main__football">
         <div class="main__name">
@@ -76,42 +74,14 @@
         </div>
     </div>
     <div id="main__topProduct">
-        <div class="item__product" style="background-image: url('/public/images/img_client/shoes_soccer_01.png');">
-            <div class="item__content">
-                <div class="title_product">GIÀY BÓNG ĐÁ JOGARBOLA X-FACTOR 190424B</div>
-                <div class="price_product">685,000<sup><u>đ</u></sup></div>
-            </div>
-        </div>
-        <div class="item__product" style="background-image: url('/public/images/img_client/shoes_soccer_02.png');">
-            <div class="item__content">
-                <div class="title_product">GIÀY BÓNG ĐÁ JOGARBOLA X-FACTOR 190424B</div>
-                <div class="price_product">685,000<sup><u>đ</u></sup></div>
-            </div>
-        </div>
-        <div class="item__product" style="background-image: url('/public/images/img_client/shoes_soccer_03.png');">
-            <div class="item__content">
-                <div class="title_product">GIÀY BÓNG ĐÁ JOGARBOLA X-FACTOR 190424B</div>
-                <div class="price_product">685,000<sup><u>đ</u></sup></div>
-            </div>
-        </div>
-        <div class="item__product" style="background-image: url('/public/images/img_client/shoes_soccer_04.png');">
-            <div class="item__content">
-                <div class="title_product">GIÀY BÓNG ĐÁ JOGARBOLA X-FACTOR 190424B</div>
-                <div class="price_product">685,000<sup><u>đ</u></sup></div>
-            </div>
-        </div>
-        <div class="item__product" style="background-image: url('/public/images/img_client/shoes_soccer_05.png');">
-            <div class="item__content">
-                <div class="title_product">GIÀY BÓNG ĐÁ JOGARBOLA X-FACTOR 190424B</div>
-                <div class="price_product">685,000<sup><u>đ</u></sup></div>
-            </div>
-        </div>
-        <div class="item__product" style="background-image: url('/public/images/img_client/shoes_soccer_07.png');">
-            <div class="item__content">
-                <div class="title_product">GIÀY BÓNG ĐÁ JOGARBOLA X-FACTOR 190424B</div>
-                <div class="price_product">685,000<sup><u>đ</u></sup></div>
-            </div>
-        </div>
+        <?php foreach ($home_product_special as $values) : ?>
+                <div class="item__product" style="background-image: url('/public/uploads/<?php echo $values['thumbnail'] ?>');">
+                    <div class="item__content">
+                        <div class="title_product"><a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></div>
+                        <div class="price_product"><?php echo number_format($values['price']) ?><sup><u>đ</u></sup></div>
+                    </div>
+                </div>
+        <?php endforeach; ?>
     </div>
     <div class="main__btnchange">
         <div id="pre"><i class='fas fa-angle-left'></i></div>
@@ -122,4 +92,4 @@
 <!-- end-main -->
 
 <!-- footer -->
-<?php get_footer('','Giao diện trang chủ') ?>
+<?php get_footer('', 'Giao diện trang chủ') ?>

@@ -46,16 +46,16 @@
     </select>
 </div>
 <div class="main__listProduct" style="margin-top: 20px;">
-    <?php for ($i = 0; $i < 12; $i++) : ?>
+    <?php foreach($home_list_product_by_id_cate as $values) : ?>
         <div class="main__product">
-            <a href="?ctr=detail_product"><img src="/public/images/img_client/shoes_soccer_07.png" alt="" class="img_product"></a>
-            <div class="title_product">BÓNG ĐÁ FIFA QUALITY PRO SEA GAMES 31 UHV 2.07</div>
-            <div href="" class="price_product">2,250,000<sup><u>đ</u></sup></div>
+            <a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id']?>"><img src="/public/uploads/<?php echo $values['thumbnail'] ?>" alt="" class="img_product"></a>
+            <div class="title_product"><a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></div>
+            <div href="" class="price_product"><?php echo number_format($values['price']) ?><sup><u>đ</u></sup></div>
             <div class="main__btn">
                 <button class="btn-add">Thêm vào giỏ</button>
                 <button class="btn-buy">Mua ngay</button>
             </div>
         </div>
-    <?php endfor; ?>
+    <?php endforeach; ?>
 </div>
 <?php get_footer('') ?>

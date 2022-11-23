@@ -1,6 +1,6 @@
 <?php
 function get_list_productions() {
-    $result = db_fetch_array("SELECT products.id,title,description,thumbnail,price,special,created_at,update_at,brands.name as 'name_brand',categories.name as 'name_category' FROM products INNER JOIN brands ON brands.id = products.brands_id INNER JOIN categories ON categories.id = products.categories_id");
+    $result = db_fetch_array("SELECT products.id,title,description,thumbnail,price,special,brands.name as 'name_brand',categories.name as 'name_category' FROM products INNER JOIN brands ON brands.id = products.brands_id INNER JOIN categories ON categories.id = products.categories_id");
     return $result;
 }
 function delete_productions($id)

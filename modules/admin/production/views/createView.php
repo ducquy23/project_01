@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             <label for="img">Ảnh sản phẩm</label> <br>
-            <input type="file" name="img" id="img">
+            <input type="file" name="fileUpload">
         </div>
         <div class="form-group">
             <label for="desc">Mô tả Product:</label><br>
