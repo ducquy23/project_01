@@ -1,5 +1,5 @@
 
-<?php get_header('', 'Tạo user') ?>
+<?php get_header('', 'Trang thêm mới user') ?>
 <div class="content-main">
     <h3>Thêm mới User</h3>
     <form action="?role=admin&mod=users&action=create" enctype="multipart/form-data" class="container" method="POST">

@@ -1,27 +1,83 @@
 <?php
 
-function construct() {
+function construct()
+{
     request_auth();
     load_model('index');
 }
 
-function indexAction() {
+function indexAction()
+{
     $data['productions'] = get_list_productions();
     load_view('index', $data);
-    
 }
-function deleteAction() {
+function deleteAction()
+{
     $id = $_GET['id'];
     delete_productions($id);
     push_notification('success', ['Xoá danh mục sản phẩm thành công']);
     header("location:?role=admin&mod=production");
 }
-function createAction() {
-    load_view('create');
+function createAction()
+{
+    $data['list_categories'] = get_list_categories();
+    $data['list_brands'] = get_list_brand();
+    load_view('create',$data);
 }
-function updateAction() {
+function updateAction()
+{
     load_view('update');
+    $id = $_GET['id'];
+    $data['data_update_productions'] = get_one_user_by_id($id);
+    load_view('update',$data);
 }
+function createPostAction() {
+    $title = $_POST['title'];
+    $price = $_POST['price'];
+    $categories = $_POST['type'];
+    $brands = $_POST['brand'];
+    $file_name = $_FILES['img']['name'];
+    $file_tmp = $_FILES['img']['tmp_name'];
+    $description = $_POST['desc'];
+    if(empty($title) || empty($price) || empty('description')) {
+        push_notification('danger',['Vui lòng không bỏ trống']);
+        header("location:?role=admin&mod=production&action=create");
+        die();
+    }else if(!is_numeric($price)) {
+        push_notification('danger',['Vui lòng nhập price là số']);
+        header("location:?role=admin&mod=production&action=create");
+        die();
+    }else {
+        move_uploaded_file($file_tmp,"/public/uploads/" . $file_name);
+        insert_productions($title,$price,$categories,$brands,$file_name,$description);
+        push_notification('success',['Tạo mới sản phẩm thàn công']);
+        header("location:?role=admin&mod=production");
+    }
+}
+function updatePostAction() {
+    $id = $_POST['id'];
+    $productName = $_POST['productName'];
+    $productPrice = $_POST['productPrice'];
+    $productDescripton = $_POST['productDescripton'];
+    $productType = $_POST['productType'];
+    $file_name = $_FILES['img']['name'];
+    $file_tmp = $_FILES['img']['tmp_name'];
+    $productDesc = $_POST['productDesc'];
+   
+
+    if(empty($productName) || empty($productPrice) || empty($productTitle) || empty($productType) || empty($productDesc)) {
+        push_notification('danger', ['Vui lòng không bỏ trống']);
+        header("location: /?role=admin&mod=production&action=update&id=". $id);
+        die();
+    }
+    else {
+        move_uploaded_file($file_tmp,"/public/uploads/" . $file_name);
+        update_production($id,$productName,$productPrice,$productDescripton,$productType,$file_name,$productDesc);
+        push_notification('success', ['Update user thành công']);
+        header("location: /?role=admin&mod=production");
+    }
+
+ }
 // function createAction() {
 //     $data['categories'] = get_list_categories();
 //     load_view('create', $data);
@@ -59,22 +115,3 @@ function updateAction() {
 //     }
 // }
 
-// function updatePostAction() {
-//     $id = $_GET['id_cate'];
-//     $cate = get_one_category($id);
-//     if (!$cate) {
-//         header('Location: /?role=admin&mod=category');
-//         die();
-//     }
-//     $name = $_POST['name'];
-//     $description = $_POST['description'];
-//     if (empty($name)) {
-//         push_notification('errors', [
-//             'name' => 'Vui lòng nhập vào tên danh mục'
-//         ]);
-//         header('Location: /?role=admin&mod=category&action=update&id_cate='.$id);
-//     }
-//     update_category($id, $name, $description);
-//     push_notification('success', ['Chỉnh sửa danh mục sản phẩm thành công']);
-//     header('Location: /?role=admin&mod=category');
-// }

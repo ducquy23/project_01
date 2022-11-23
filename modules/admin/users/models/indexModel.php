@@ -9,24 +9,24 @@ function delete_users($id)
     db_delete('users', "id = $id");
     return true;
 }
-function create_users($fullname, $email,$password)
-{
+
+function create_user($username,$password,$email) {
     $id = db_insert('users',[
-        'fullname' => $fullname,
-        'email' => $email,
+        'fullname' => $username,
         'password' => $password,
+        'email' => $email
     ]);
     return $id;
 }
-
-function get_one_users($id) {
+function update_user($id,$username,$password,$email) {
+    db_update('users',[
+        'fullname' => $username,
+        'password' => $password,
+        'email' => $email
+    ],"id = $id");
+    return true;
+}
+function get_one_user_by_id($id) {
     $result = db_fetch_row("SELECT * FROM `users` WHERE `id` = {$id}");
     return $result;
-}
-
-function update_category($id, $name) {
-    db_update('users', [
-        'name' => $name,
-    ], "id = $id");
-    return true;
 }
