@@ -1,13 +1,4 @@
-<?php
-// show_array($home_cate_child);
-// for ($i = 0; $i < count($home_cate_child); $i++) {
-//     foreach ($home_cate_child[$i] as $values) {
-//         echo "<pre>";
-//         print_r($values['name']);
-//         echo "</pre>";
-//     }
-// }
-?>
+<?php ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,9 +22,9 @@
         <div class="header">
             <div class="header__nav">
                 <ul class="header__category">
-                    <li><a href="">Tin tức</a></li>
-                    <li><a href="">Cửa hàng</a></li>
-                    <li><a href="">Liên hệ</a></li>
+                    <!-- <li><a href="">Tin tức</a></li> -->
+                    <li><a href="">Đăng nhập</a></li>
+                    <li><a href="">Đăng ký</a></li>
                     <li>
                         <a href=""><img src="/public/images/img_client/logo_vietnamese.png" alt=""></a>
                         <a href=""><img src="/public/images/img_client/logo_english.png" alt=""></a>
@@ -44,45 +35,29 @@
                     <a href="?role=client&mod=home"><img src="/public/images/img_client/logo_header.png" alt=""></a>
                 </div>
                 <ul class="header__listCategory">
-                        <li>
-                            <a href="?role=client&mod=home_collections">Giày</a>
-                            <a href=""><i class='bx bx-chevron-down'></i></a>
-                            <ul class="header__submenu">
-                                <li><a href="">Giày đá bóng</a></li>
-                                <li><a href="">Giày chạy bộ</a></li>
-                                <li><a href="">Giày cầu lông</a></li>
-                                <li><a href="">Giày bóng rổ</a></li>
-                            </ul>
-                        </li>
+                    <li><a href="?role=client&mod=home">TRANG CHỦ</a></li>
+                    <li><a href="#">TIN TỨC</a>
+                    </li>
+                    <li><a href="#">LIÊN HỆ</a>
+                    </li>
                     <li>
-                            <a href="">QUẦN ÁO</a>
-                            <a href=""><i class='bx bx-chevron-down'></i></a>
-                            <ul class="header__submenu">
-                                <li><a href="">Áo Polo</a></li>
-                                <li><a href="">Áo T-shirt</a></li>
-                                <li><a href="">Áo Khoác</a></li>
-                                <li><a href="">Áo Hoddies</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="">BỘ THỂ THAO</a>
-                            <a href=""><i class='bx bx-chevron-down'></i></a>
-                            <ul class="header__submenu">
-                                <li><a href="">Bộ suvec</a></li>
-                                <li><a href="">Bộ bóng đá</a></li>
-                                <li><a href="">Bộ cầu lông</a></li>
-                                <li><a href="">Bộ bóng chuyền</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="">PHỤ KIỆN</a>
-                            <a href=""><i class='bx bx-chevron-down'></i></a>
-                            <ul class="header__submenu">
-                                <li><a href="">Mũ </a></li>
-                                <li><a href="">Balo</a></li>
-                                <li><a href="">Vớ</a></li>
-                            </ul>
-                        </li>
+                        <a href="">BÓNG</a>
+                        <a href=""><i class='bx bx-chevron-down'></i></a>
+                        <ul class="header__submenu">
+                            <?php foreach ($home_list_cate_football as $values) : ?>
+                                <li><a href="?role=client&mod=home_collections&id=<?php echo $values['id'] ?>"><?php echo $values['name'] ?> </a></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">GIÀY</a>
+                        <a href=""><i class='bx bx-chevron-down'></i></a>
+                        <ul class="header__submenu">
+                            <?php foreach ($home_list_cate_shoes as $values) : ?>
+                                <li><a href="?role=client&mod=home_collections&id=<?php echo $values['id'] ?>"><?php echo $values['name'] ?></a></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </li>
                 </ul>
                 <div class="header__search">
                     <input type="text" placeholder="Tìm kiếm sản phẩm">

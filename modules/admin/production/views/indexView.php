@@ -19,8 +19,6 @@
                 <th>Thumbnail</th>
                 <th>Special</th>
                 <th>Description</th>
-                <th>Create at</th>
-                <th>Update at</th>
                 <th>Categories</th>
                 <th>Brands</th>
                 <th>Action</th>
@@ -33,11 +31,9 @@
                     <td><?php echo $values['id'] ?></td>
                     <td><?php echo $values['title'] ?></td>
                     <td><?php echo number_format($values['price'],) . "đ" ?></td>
-                    <td><img style="width: 100px;height: 100px;" src="/public/images/img_client/<?php echo $values['thumbnail'] ?>" alt=""></td>
+                    <td><img style="width: 100px;height: 100px;" src="/public/uploads/<?php echo $values['thumbnail'] ?> " alt=""></td>
                     <td><?php echo ($values['special'] == 0) ? 'Không đặc biệt' : "Đặc biệt" ?></td>
-                    <td><p style="overflow-y:scroll; height:150px;width: 240px;"><?php echo $values['description'] ?></p></td>
-                    <td><?php echo $values['created_at'] ?></td>
-                    <td><?php echo date($values['update_at']) ?></td>
+                    <td><p style="overflow-y:scroll; height:120px;width: 420px;"><?php echo $values['description'] ?></p></td>
                     <td style=""><?php echo $values['name_category'] ?></td>
                     <td><?php echo $values['name_brand'] ?></td>
                     <td style="width: 200px;text-align: center;">

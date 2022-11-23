@@ -228,6 +228,14 @@ body {
     line-height: 20px;
     margin-top: 15px;
 }
+.title_product > a {
+    text-decoration: none;
+    color: #000;
+}
+.title_product > a:hover {
+    color: #dc3545;
+    text-decoration: none;
+ }
 
 .price_product {
     color: gray;

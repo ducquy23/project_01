@@ -87,12 +87,11 @@ function call_function($list_function = array()) {
         }
     }
 }
-
 function load_view($name, $data_send = array()) {
     global $data;
     $data = $data_send;
     $path = MODULESPATH . DIRECTORY_SEPARATOR . get_role() . DIRECTORY_SEPARATOR .  get_module() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . $name . 'View.php';
-    // $path = modules/client/home/views/indexViews.php
+    // $path = modules/admin/category/views/indexViews.php
     if (file_exists($path)) {
         if (is_array($data)) {
             foreach ($data as $key_data => $v_data) {
