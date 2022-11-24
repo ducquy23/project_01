@@ -4,7 +4,7 @@ function get_list_product_shoes() {
     return $result;
 }
 function get_list_product_football() {
-    $result = db_fetch_array("SELECT * FROM `products` WHERE categories_id = 28 LIMIT 8");
+    $result = db_fetch_array("SELECT * FROM `products` WHERE categories_id = 20 LIMIT 8");
     return $result;
 }
 function get_list_product_special() {
@@ -12,11 +12,11 @@ function get_list_product_special() {
     return $result;
 }
 function get_list_categories_football() {
-    $result = db_fetch_array("SELECT * FROM `categories` WHERE parent_id = 31");
+    $result = db_fetch_array("SELECT * FROM `categories` WHERE parent_id = 1");
     return $result;
 }
 function get_list_categories_shoes() {
-    $result = db_fetch_array("SELECT * FROM `categories` WHERE parent_id = 32");
+    $result = db_fetch_array("SELECT * FROM `categories` WHERE parent_id = 4");
     return $result;
 }
 
