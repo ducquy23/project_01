@@ -1,6 +1,9 @@
 <?php 
 function get_product_by_id($id) {
-    $result = db_fetch_row("SELECT * FROM products WHERE id = $id");
+    $result = db_fetch_row("SELECT products.id as 'product_id',thumbnail,title,price,description,categories.name as 'cate_name',brands.name as 'brand_name' 
+    FROM products 
+    INNER JOIN categories ON categories.id = products.categories_id 
+    INNER JOIN brands ON products.brands_id = brands.id WHERE products.id = $id");
     return $result;
 }
 function get_product_by_category($id) { 

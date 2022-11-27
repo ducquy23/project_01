@@ -1,5 +1,4 @@
 <?php get_header('', 'Giao diện trang chủ');
-
 ?>
 <div class="header__banner">
     <div class="mySlides fade-img">
@@ -27,8 +26,8 @@
             <h2>BÓNG</h2>
         </div>
         <ul class="main__list">
-            <?php foreach ($home_list_cate_football as $values) : ?>
-                <li><a href="#" class="item__football"><?php echo $values['name'] ?></a></li>
+            <?php foreach ($home_list_cate_shoes as $values) : ?>
+                <li><a href="?role=client&mod=home&id_cate_football=<?php echo $values['id'] ?>"><?php echo $values['name'] ?></a></li>
             <?php endforeach; ?>
         </ul>
     </div>
@@ -36,7 +35,7 @@
         <?php foreach ($home_cate_football as $values) : ?>
             <div class="main__product">
                 <a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><img src="/public/uploads/<?php echo $values['thumbnail'] ?>" alt="" class="img_product"></a>
-                <div class="title_product"><a href="?role=client&mod=home_detail&id=<?php echo $values['id']?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></div>
+                <div class="title_product"><a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></div>
                 <div href="" class="price_product"><?php echo number_format($values['price']) ?><sup><u>đ</u></sup></div>
                 <div class="main__btn">
                     <button class="btn-add">Thêm vào giỏ</button>
@@ -50,8 +49,8 @@
             <h2>GIÀY</h2>
         </div>
         <ul class="main__list">
-            <?php foreach ($home_list_cate_shoes as $values) : ?>
-                <li><a href="#" class="item__shoes"><?php echo $values['name'] ?></a></li>
+            <?php foreach ($home_list_cate_football as $values) : ?>
+                <li><a href="?role=client&mod=home&id_cate_shoes=<?php echo $values['id'] ?>"><?php echo $values['name'] ?></a></li>
             <?php endforeach; ?>
         </ul>
     </div>
@@ -75,12 +74,12 @@
     </div>
     <div id="main__topProduct">
         <?php foreach ($home_product_special as $values) : ?>
-                <div class="item__product" style="background-image: url('/public/uploads/<?php echo $values['thumbnail'] ?>');">
-                    <div class="item__content">
-                        <div class="title_product"><a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></div>
-                        <div class="price_product"><?php echo number_format($values['price']) ?><sup><u>đ</u></sup></div>
-                    </div>
+            <div class="item__product" style="background-image: url('/public/uploads/<?php echo $values['thumbnail'] ?>');">
+                <div class="item__content">
+                    <div class="title_product"><a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></div>
+                    <div class="price_product"><?php echo number_format($values['price']) ?><sup><u>đ</u></sup></div>
                 </div>
+            </div>
         <?php endforeach; ?>
     </div>
     <div class="main__btnchange">

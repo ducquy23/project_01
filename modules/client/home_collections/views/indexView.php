@@ -1,4 +1,4 @@
-<?php get_header('','danh sách sản phẩm trong danh mục') ?>
+<?php get_header('', 'danh sách sản phẩm trong danh mục') ?>
 <style>
     .footer {
         margin-top: 140px;
@@ -6,16 +6,21 @@
 </style>
 <div class="header__collections">
     <a href="?role=client&mod=home">Trang chủ / </a>
-    <span style="margin-left: 5px;">Giày đá bóng nam</span>
+    <span style="margin-left: 5px;"><?php echo $home_parent_category['name'] ?></span>
 </div>
 <div class="header__danhmuc">
-    <h1>Giày Đá Bóng Nam</h1>
+    <h1><?php echo $home_categories['name'] ?></h1>
 </div>
 <div class="header__categoryCollection">
     <ul class="header__listCategoryCollection">
         <li>
             <a href="">Danh mục</a>
             <a href=""><i class='bx bx-chevron-down'></i></a>
+            <ul class="submenu">
+                <?php foreach($categories_all_by_parent_id as $values) : ?>
+                    <li><a href="?role=client&mod=home_collections&id=<?php echo $values['id'] ?>&parent_id=<?php echo $values['parent_id'] ?>"><?php echo $values['name'] ?></a></li>
+                <?php endforeach; ?>
+            </ul>
         </li>
         <li>
             <a href="">Thương hiệu</a>
@@ -46,9 +51,9 @@
     </select>
 </div>
 <div class="main__listProduct" style="margin-top: 20px;">
-    <?php foreach($home_list_product_by_id_cate as $values) : ?>
+    <?php foreach ($home_list_product_by_id_cate as $values) : ?>
         <div class="main__product">
-            <a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id']?>"><img src="/public/uploads/<?php echo $values['thumbnail'] ?>" alt="" class="img_product"></a>
+            <a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><img src="/public/uploads/<?php echo $values['thumbnail'] ?>" alt="" class="img_product"></a>
             <div class="title_product"><a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></div>
             <div href="" class="price_product"><?php echo number_format($values['price']) ?><sup><u>đ</u></sup></div>
             <div class="main__btn">

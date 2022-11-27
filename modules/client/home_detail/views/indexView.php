@@ -6,7 +6,7 @@
 </style>
 <div class="header__collections">
     <a href="?role=client&mode=home">Trang chủ / </a>
-    <a href="" style="margin-left: 5px;"> Giày /</a>
+    <!-- <a href="" style="margin-left: 5px;"> Giày /</a> -->
     <span style="margin-left: 8px;"> <?php echo $info_detail_product['title'] ?></span>
 </div>
 <div class="main">
@@ -26,8 +26,8 @@
                 <?php echo $info_detail_product['title'] ?>
             </div>
             <div class="intro__product-brand">
-                Thương Hiệu: <a href="">JOGARBOLA </a>
-                | Mã sản phẩm:1020236214873
+                Thương Hiệu: <a href=""><?php echo $info_detail_product['brand_name'] ?> </a>
+                | Mã sản phẩm:<?php echo $info_detail_product['product_id'] ?>
             </div>
             <div class="intro__product-price">
                <?php echo number_format($info_detail_product['price']) . "Đ" ?>
@@ -70,7 +70,7 @@
     <div class="relate">
         <div class="relate__product">
             <div class="header__ralate">
-                SẢN PHẨM LIÊN QUAN
+                SẢN PHẨM CÙNG LOẠI
             </div>
             <div class="relate__list-product">
                 <?php foreach($list_categories_related as $values) : ?>

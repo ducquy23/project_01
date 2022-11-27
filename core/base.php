@@ -31,34 +31,6 @@ function get_action() {
     return $action;
 }
 
-/*
- * -------------------------------
- * Load
- * ------------------------------------------------------------------------------------
- * Load các file từ các phân vùng vào hệ thống tham gia xử lý
- * Ví dụ: load('lib','database');
- * ------------------------------------------------------------------------------------
- * GIẢI THÍCH
- * ------------------------------------------------------------------------------------
- * Đầu vào
- * - $type: Loại phân vùng hệ thống: lib, helper...
- * - $name: Tên chức năng được load: database, string...
- * ------------------------------------------------------------------------------------
- */
-
-//function run_module($url, $data_echo = true) {
-////    global $config;
-//    include  base_url().$url;
-////    if (empty($url))
-////        return FALSE;
-////
-////    if ($data_echo) {
-////        echo get_data($url);
-////    } else {
-////        return get_data($url);
-////    }
-//}
-
 function load($type, $name) {
     if ($type == 'lib')
         $path = LIBPATH . DIRECTORY_SEPARATOR . "{$name}.php";
@@ -153,7 +125,7 @@ function get_footer($name = '') {
     }
 }
 
-function push_notification($type, $msgs) { //success | ['Xóa danh mục sản phẩm thàn công']
+function push_notification($type, $msgs) { //success | ['Xóa danh mục sản phẩm thành công']
     if (!isset($_SESSION["notification"])) $_SESSION["notification"] = [];
     $data = [];
     $data["type"] = $type;
@@ -171,7 +143,6 @@ function get_notification() {
 function push_auth($user) {
     $_SESSION["auth"] = $user;
 }
-
 function is_auth()
 {
     return isset($_SESSION["auth"]);
@@ -180,13 +151,44 @@ function is_auth()
 function get_auth()
 {
     return $_SESSION["auth"];
+}   
+
+// function request_auth($isLogin = true)
+// {
+//     if (is_auth() !== $isLogin) {
+//         header("Location: " . ($isLogin ? '/?role=admin&mod=auth' : '/?role=admin'));
+//         die;
+//     }
+// }
+
+/* 
+    auther
+*/
+function remove_auth()
+{
+    unset($_SESSION["auth"]);
+    return true;
 }
+
+function is_admin()
+{
+    return is_auth() && get_auth()['role'] == 2;
+}
+
 
 function request_auth($isLogin = true)
 {
+    $request_role = get_role() === 'admin' ? 2 : 1;
     if (is_auth() !== $isLogin) {
-        header("Location: " . ($isLogin ? '/?role=admin&mod=auth' : '/?role=admin'));
+        header("Location: " . ($isLogin ? '/?role='. ($auth['role'] == 1 ? 'client' : 'admin') . '&mod=auth' : '/?role=' . ($auth['role'] == 1 ? 'client' : 'admin')));
         die;
+    }
+    if (is_auth()) {
+        $auth = get_auth();
+        if ($auth['role'] != $request_role) {
+            header("Location: /?role=" . ($auth['role'] == 1 ? 'client' : 'admin'));
+            die;
+        }
     }
 }
 
