@@ -26,10 +26,13 @@ function createAction()
 }
 function updateAction()
 {
-    load_view('update');
+
     $id = $_GET['id'];
-    $data['data_update_productions'] = get_one_user_by_id($id);
-    load_view('update',$data);
+    $data['data_update_production'] = get_one_production($id);
+    $data['all_categories'] = get_all_category();
+    $data['all_brands'] = get_all_brands();
+
+    load_view('update', $data);
 }
 function createPostAction()
 {
@@ -55,30 +58,28 @@ function createPostAction()
         header("location:?role=admin&mod=production");
     }
 }
-function updatePostAction() {
-    $id = $_POST['id'];
-    $productName = $_POST['productName'];
-    $productPrice = $_POST['productPrice'];
-    $productDescripton = $_POST['productDescripton'];
-    $productType = $_POST['productType'];
+function updatePostAction()
+{
+    $id = $_POST['product_id'];
+    $productName = $_POST['title'];
+    $productPrice = $_POST['price'];
+    $productType = $_POST['categories'];
+    $productBrands = $_POST['brands'];
     $file_name = $_FILES['img']['name'];
     $file_tmp = $_FILES['img']['tmp_name'];
     $productDesc = $_POST['productDesc'];
-   
-
-    if(empty($productName) || empty($productPrice) || empty($productTitle) || empty($productType) || empty($productDesc)) {
+    move_uploaded_file($file_tmp, "public/uploads/" . $file_name);
+    if (empty($productName) || empty($productPrice) || empty($productDesc)) {
         push_notification('danger', ['Vui lòng không bỏ trống']);
-        header("location: /?role=admin&mod=production&action=update&id=". $id);
+        header("location: /?role=admin&mod=production&action=update&id=" . $id);
         die();
-    }
-    else {
-        move_uploaded_file($file_tmp,"/public/uploads/" . $file_name);
-        update_production($id,$productName,$productPrice,$productDescripton,$productType,$file_name,$productDesc);
+    } else {
+        update_production($id, $productName, $productPrice, $productBrands, $productType,$file_name, $productDesc);
         push_notification('success', ['Update user thành công']);
         header("location: /?role=admin&mod=production");
     }
+}
 
- }
 // function createAction() {
 //     $data['categories'] = get_list_categories();
 //     load_view('create', $data);
@@ -115,4 +116,3 @@ function updatePostAction() {
 //         header('Location: /?role=admin&mod=category');
 //     }
 // }
-
