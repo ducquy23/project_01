@@ -33,9 +33,10 @@ $role = isset($_SESSION['user']) ? $_SESSION['user']['role'] : "";
                     <?php } else if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 1) { ?>
                         <li>Xin chào: <?php echo $_SESSION['user']['fullname'] ?> | </li>
                         <li><a href="?role=client&mod=login&action=logout">Đăng xuất</a></li>
-                    <?php } ?>
+                    <?php }else { ?>
                     <li><a href="?role=client&mod=login">Đăng nhập</a></li>
                     <li><a href="?role=client&mod=register">Đăng ký</a></li>
+                    <?php }?>
                     <li>
                         <a href=""><img src="/public/images/img_client/logo_vietnamese.png" alt=""></a>
                         <a href=""><img src="/public/images/img_client/logo_english.png" alt=""></a>
@@ -76,8 +77,8 @@ $role = isset($_SESSION['user']) ? $_SESSION['user']['role'] : "";
                 </div>
                 <div class="header__manage">
                     <a href=""><i class='bx bx-user-circle'></i></a>
-                    <label for="nav-input"><i class='bx bx-cart'></i></label>
-                    <span class="header__quantity">0</span>
+                    <label for="nav-input"><a href="?role=client&mod=cart"><i class='bx bx-cart'></i></a></label>
+                    <!-- <span class="header__quantity">0</span> -->
                 </div>
             </div>
             <input type="checkbox" id="nav-input" class="nav-input" style="opacity: 0;">
@@ -99,7 +100,7 @@ $role = isset($_SESSION['user']) ? $_SESSION['user']['role'] : "";
                 </div>
                 <div class="card__btn">
                     <div class="card__view">
-                        <button>Xem giỏ hàng</button>
+                       <a href="?role=client&mod=cart"><button>Xem giỏ hàng</button></a>
                     </div>
                     <div class="card__pay">
                         <button>Thanh toán</button>

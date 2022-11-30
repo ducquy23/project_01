@@ -50,7 +50,7 @@
                     <input type="number" value="1" min="0">
                 </div>
                 <div class="intro__product-btn">
-                    <button>Thêm vào giỏ hàng</button>
+                    <a href="?role=client&mod=cart&id=<?php echo $info_detail_product['product_id'] ?>"><button>Thêm vào giỏ hàng</button></a>
                     <button>Mua ngay</button>
                 </div>
             </div>

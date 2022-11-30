@@ -26,4 +26,7 @@ function logoutAction() {
     unset($_SESSION['user']);
     header("location:index.php");
 }
+function forgotAction() {
+    load_view('forgot');
+}
 ?>

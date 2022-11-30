@@ -32,11 +32,8 @@ $notification = get_notification();
             <br>
             <button class="btn btn-primary" name="submit" type="submit">Log in</button>
         </form>
-        <a href="./forget.php" style="text-decoration: none  ;">
+        <a href="?role=client&mod=login&action=forgot" style="text-decoration: none  ;">
             <p style="font-size:18px;padding-top: 20px ;">Forgot password?</p>
-        </a>
-        <a href="./register.php" style="font-size: 20px ; text-decoration: none;">
-            <p>Dont have an account? Join free today </p>
         </a>
     </div>
     <script src="js.js"></script>
