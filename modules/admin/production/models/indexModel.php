@@ -14,7 +14,7 @@ function delete_productions($id)
     return true;
 }
 function get_list_categories() {
-    $result = db_fetch_array("SELECT * FROM categories");
+    $result = db_fetch_array("SELECT categories.name,categories.id FROM categories");
     return $result;
 }
 

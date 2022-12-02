@@ -42,4 +42,4 @@
     <!--end::Login-->
 </div>
 <!--end::Main-->
-<?php get_footer('base') ?>
+<?php get_footer('base','Đăng nhập') ?>

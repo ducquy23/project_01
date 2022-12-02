@@ -1,4 +1,8 @@
-<?php ?>
+<?php
+// echo $_SESSION['user']['id'];
+$role = isset($_SESSION['user']) ? $_SESSION['user']['role'] : "";
+// echo $role;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,9 +26,17 @@
         <div class="header">
             <div class="header__nav">
                 <ul class="header__category">
-                    <!-- <li><a href="">Tin tức</a></li> -->
-                    <li><a href="">Đăng nhập</a></li>
-                    <li><a href="">Đăng ký</a></li>
+                    <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 2) { ?>
+                        <li><a href="?role=admin"><i class='bx bx-home-alt' style="margin-right: 3px;font-size: 20px;transform: translateY(2px);"></i>Vào trang quản trị |</a></li>
+                        <li>Xin chào: <?php echo $_SESSION['user']['fullname'] ?> | </li>
+                        <li><a href="?role=client&mod=login&action=logout">Đăng xuất</a></li>
+                    <?php } else if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 1) { ?>
+                        <li>Xin chào: <?php echo $_SESSION['user']['fullname'] ?> | </li>
+                        <li><a href="?role=client&mod=login&action=logout">Đăng xuất</a></li>
+                    <?php }else { ?>
+                    <li><a href="?role=client&mod=login">Đăng nhập</a></li>
+                    <li><a href="?role=client&mod=register">Đăng ký</a></li>
+                    <?php }?>
                     <li>
                         <a href=""><img src="/public/images/img_client/logo_vietnamese.png" alt=""></a>
                         <a href=""><img src="/public/images/img_client/logo_english.png" alt=""></a>
@@ -41,20 +53,20 @@
                     <li><a href="#">LIÊN HỆ</a>
                     </li>
                     <li>
-                        <a href="">BÓNG</a>
+                        <a href="?role=client&mod=home_collections&id=5&parent_id=1">GIÀY</a>
                         <a href=""><i class='bx bx-chevron-down'></i></a>
                         <ul class="header__submenu">
                             <?php foreach ($home_list_cate_football as $values) : ?>
-                                <li><a href="?role=client&mod=home_collections&id=<?php echo $values['id'] ?>"><?php echo $values['name'] ?> </a></li>
+                                <li><a href="?role=client&mod=home_collections&id=<?php echo $values['id'] ?>&parent_id=<?php echo $values['parent_id'] ?>"><?php echo $values['name'] ?> </a></li>
                             <?php endforeach; ?>
                         </ul>
                     </li>
                     <li>
-                        <a href="">GIÀY</a>
+                        <a href="?role=client&mod=home_collections&id=20&parent_id=4">BÓNG</a>
                         <a href=""><i class='bx bx-chevron-down'></i></a>
                         <ul class="header__submenu">
                             <?php foreach ($home_list_cate_shoes as $values) : ?>
-                                <li><a href="?role=client&mod=home_collections&id=<?php echo $values['id'] ?>"><?php echo $values['name'] ?></a></li>
+                                <li><a href="?role=client&mod=home_collections&id=<?php echo $values['id'] ?>&parent_id=<?php echo $values['parent_id'] ?>"><?php echo $values['name'] ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </li>
@@ -65,8 +77,8 @@
                 </div>
                 <div class="header__manage">
                     <a href=""><i class='bx bx-user-circle'></i></a>
-                    <label for="nav-input"><i class='bx bx-cart'></i></label>
-                    <span class="header__quantity">0</span>
+                    <label for="nav-input"><a href="?role=client&mod=cart"><i class='bx bx-cart'></i></a></label>
+                    <!-- <span class="header__quantity">0</span> -->
                 </div>
             </div>
             <input type="checkbox" id="nav-input" class="nav-input" style="opacity: 0;">
@@ -88,7 +100,7 @@
                 </div>
                 <div class="card__btn">
                     <div class="card__view">
-                        <button>Xem giỏ hàng</button>
+                       <a href="?role=client&mod=cart"><button>Xem giỏ hàng</button></a>
                     </div>
                     <div class="card__pay">
                         <button>Thanh toán</button>
