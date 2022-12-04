@@ -28,6 +28,7 @@ function updateAction()
     $data['data_update_user'] = get_one_user_by_id($id);
     load_view('update',$data);
 }
+
 function createPostAction()
 {
     $username = $_POST['username'];
@@ -42,6 +43,7 @@ function createPostAction()
         push_notification('success', ['Tạo mới User thành công']);
         header('Location: /?role=admin&mod=users');
     }
+
 }
 function updatePostAction() {
     $id = $_POST['id'];

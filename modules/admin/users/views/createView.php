@@ -5,7 +5,7 @@
     <form action="?role=admin&mod=users&action=create" enctype="multipart/form-data" class="container" method="POST">
         <div class="form-group">
             <label for="name">Tên user:</label>
-            <input type="text" name="username" class="form-control" placeholder="Enter Name" id="name">
+            <input type="text" name="fullname" class="form-control" placeholder="Enter Name" id="name">
         </div>
         <div class="form-group">
             <label for="pwd">Password:</label>

@@ -26,7 +26,13 @@ function createAction()
 }
 function updateAction()
 {
-    load_view('update');
+
+    $id = $_GET['id'];
+    $data['data_update_production'] = get_one_production($id);
+    $data['all_categories'] = get_all_category();
+    $data['all_brands'] = get_all_brands();
+
+    load_view('update', $data);
 }
 function createPostAction()
 {
@@ -52,6 +58,28 @@ function createPostAction()
         header("location:?role=admin&mod=production");
     }
 }
+function updatePostAction()
+{
+    $id = $_POST['product_id'];
+    $productName = $_POST['title'];
+    $productPrice = $_POST['price'];
+    $productType = $_POST['categories'];
+    $productBrands = $_POST['brands'];
+    $file_name = $_FILES['img']['name'];
+    $file_tmp = $_FILES['img']['tmp_name'];
+    $productDesc = $_POST['productDesc'];
+    move_uploaded_file($file_tmp, "public/uploads/" . $file_name);
+    if (empty($productName) || empty($productPrice) || empty($productDesc)) {
+        push_notification('danger', ['Vui lòng không bỏ trống']);
+        header("location: /?role=admin&mod=production&action=update&id=" . $id);
+        die();
+    } else {
+        update_production($id, $productName, $productPrice, $productBrands, $productType,$file_name, $productDesc);
+        push_notification('success', ['Update user thành công']);
+        header("location: /?role=admin&mod=production");
+    }
+}
+
 // function createAction() {
 //     $data['categories'] = get_list_categories();
 //     load_view('create', $data);
@@ -87,24 +115,4 @@ function createPostAction()
 //     } else {
 //         header('Location: /?role=admin&mod=category');
 //     }
-// }
-
-// function updatePostAction() {
-//     $id = $_GET['id_cate'];
-//     $cate = get_one_category($id);
-//     if (!$cate) {
-//         header('Location: /?role=admin&mod=category');
-//         die();
-//     }
-//     $name = $_POST['name'];
-//     $description = $_POST['description'];
-//     if (empty($name)) {
-//         push_notification('errors', [
-//             'name' => 'Vui lòng nhập vào tên danh mục'
-//         ]);
-//         header('Location: /?role=admin&mod=category&action=update&id_cate='.$id);
-//     }
-//     update_category($id, $name, $description);
-//     push_notification('success', ['Chỉnh sửa danh mục sản phẩm thành công']);
-//     header('Location: /?role=admin&mod=category');
 // }

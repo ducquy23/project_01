@@ -28,8 +28,3 @@ function update_category($id, $name) {
     ], "id = $id");
     return true;
 }
-
-// function delete_category($id) {
-//     db_delete('categories', "id = $id");
-//     return true;
-// }

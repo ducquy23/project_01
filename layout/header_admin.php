@@ -15,6 +15,8 @@ $notification = get_notification();
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    
 </head>
 
 <body>
@@ -31,27 +33,39 @@ $notification = get_notification();
                             <span><a href="?role=client&mod=home">Home page</a></span>
                         </li>
                         <li>
-                            <a href=""><i class='bx bxs-dashboard'></i></a>
+                            <a href=""><i class='bx bx-customize'></i></a>
                             <span><a href="?role=admin&mod=home">Dashboard</a></span>
                         </li>
                         <li>
-                            <a href=""><img src="/public/images/img_admin/qlsp.png" alt=""></a>
+                            <a href=""><i class='bx bx-spreadsheet'></i></a>
                             <span><a href="?role=admin&mod=production">Quản lý sản phẩm</a></span>
                         </li>
                         <li>
-                            <a href=""><img src="/public/images/img_admin/qluser.png" alt=""></a>
+                            <a href=""><i class='bx bx-user-plus'></i></a>
                             <span><a href="?role=admin&mod=users">Quản lý user</a></span>
                         </li>
                         <li>
-                            <a href=""><img src="/public/images/img_admin/qldm.png" alt=""></a>
+                            <a href=""><i class='bx bx-category'></i></a>
                             <span><a href="?role=admin&mod=category">Quản lý danh mục</a></span>
                         </li>
                         <li>
-                            <a href=""><img src="/public/images/img_admin/qldm.png" alt=""></a>
+                            <a href=""><i class='bx bx-purchase-tag-alt'></i></a>
+                            <span><a href="?role=admin&mod=brands">Quản lý thương hiệu</a></span>
+                        </li>
+                        <li>
+                            <a href=""><i class='bx bx-cart-add'></i></a>
+                            <span><a href="?role=admin&mod=orders">Quản lý đơn hàng</a></span>
+                        </li>
+                        <li>
+                            <a href=""><i class='bx bx-cart'></i></a>
+                            <span><a href="?role=admin&mod=ordersDetails">Thông tin chi tiết đơn hàng</a></span>
+                        </li>
+                        <li>
+                            <a href=""><i class='bx bx-comment-dots'></i></a>
                             <span><a href="?role=admin&mod=comments">Quản lý bình luận</a></span>
                         </li>
                         <li>
-                            <a href=""><img src="/public/images/img_admin/thongke.png" alt=""></a>
+                            <a href=""><i class='bx bx-bar-chart-alt-2' ></i></a>
                             <span><a href="?role=admin&mod=thongke">Thống kê</a></span>
                         </li>
                     </ul>

@@ -9,6 +9,7 @@ function delete_users($id)
     db_delete('users', "id = $id");
     return true;
 }
+
 function create_user($username,$password,$email) {
     $id = db_insert('users',[
         'fullname' => $username,
