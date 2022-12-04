@@ -17,7 +17,7 @@
             <a href="">Danh mục</a>
             <a href=""><i class='bx bx-chevron-down'></i></a>
             <ul class="submenu">
-                <?php foreach($categories_all_by_parent_id as $values) : ?>
+                <?php foreach ($categories_all_by_parent_id as $values) : ?>
                     <li><a href="?role=client&mod=home_collections&id=<?php echo $values['id'] ?>&parent_id=<?php echo $values['parent_id'] ?>"><?php echo $values['name'] ?></a></li>
                 <?php endforeach; ?>
             </ul>
@@ -39,16 +39,12 @@
             <a href=""><i class='bx bx-chevron-down'></i></a>
         </li>
     </ul>
-    <select name="" id="">
-        <option value="">Mới nhất</option>
-        <option value="">Sản phẩm nổi bật</option>
-        <option value="">Giá: Tăng dần</option>
-        <option value="">Giá: Giảm dần</option>
-        <option value="">Giá: Tên A-Z</option>
-        <option value="">Giá: Tên Z-A</option>
-        <option value="">Cũ nhất</option>
-        <option value="">Bán chạy nhất</option>
-    </select>
+    <div class="header__search">
+        <form action="?role=client&mod=home_collections" method="GET">
+            <input type="text" placeholder="Tìm kiếm sản phẩm" name="name">
+            <button type="submit">Tìm kiếm</button>
+        </form>
+    </div>
 </div>
 <div class="main__listProduct" style="margin-top: 20px;">
     <?php foreach ($home_list_product_by_id_cate as $values) : ?>
@@ -58,7 +54,7 @@
             <div href="" class="price_product"><?php echo number_format($values['price']) ?><sup><u>đ</u></sup></div>
             <div class="main__btn">
                 <a href="?role=client&mod=cart&id=<?php echo $values['id'] ?>"><button class="btn-add">Thêm vào giỏ</button></a>
-                <button class="btn-buy">Mua ngay</button>
+                <a href="?role=client&mod=cart&action=pay&id=<?php echo $values['id'] ?>"><button class="btn-buy">Mua ngay</button></a>
             </div>
         </div>
     <?php endforeach; ?>

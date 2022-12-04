@@ -21,12 +21,12 @@ $notification = get_notification();
         </div>
         <form action="?role=client&mod=login&action=login" method="POST">
             <p id="pass" class="form-group">
-                <i class='bx bxs-user' style="font-size:20px ;"> User</i>
+                <i class='bx bxs-user' style="font-size:20px ;">Nhập tài khoản :</i>
                 <input class="form-control" name="fullname" type="text" placeholder="Enter Account">
             </p>
             <br>
             <p id="form-group">
-                <i class='bx bx-low-vision' style="font-size:20px ;"> Password</i>
+                <i class='bx bx-low-vision' style="font-size:20px ;">Nhập mật khẩu :</i>
                 <input id="type" class="form-control" name="password" type="password" placeholder="Enter Password">
             </p>
             <br>

@@ -82,14 +82,14 @@ body {
     border-radius: 6px;
 }
 
-.header__search>input {
+.header__search > form > input {
     outline: none;
     border: none;
     padding: 5px;
     border-radius: 5px;
 }
 
-.header__search>button {
+.header__search > form > button {
     outline: none;
     border: none;
     background-color: #e1d8d9;
@@ -368,7 +368,7 @@ body {
     top: 100px;
     z-index: 19999;
     border: 1px solid black;
-    padding: 0 9px;
+    padding: 5px 9px;
     border-radius: 50%;
 }
 
@@ -383,7 +383,7 @@ body {
     z-index: 19999;
     top: 100px;
     border: 1px solid black;
-    padding: 0 9px;
+    padding: 5px 9px;
     border-radius: 50%;
 }
 
@@ -679,18 +679,27 @@ select {
     opacity: 0.8;
 }
 .introProduct {
-    padding: 30px;
-    background-color: #f6f6f8;
+    width: 1459px;
+    background-color: #ffff;
     margin-top: 80px;
+    margin: 50px auto;
+    box-shadow: 0 30px 50px #CCC;
 }
 .introProduct__header {
-    padding: 20px;
     background-color: #333;
+    height: 64px;
+    line-height: 64px;
 }
 .introProduct__header > a {
     color: #fff;
-    margin: 0 10px;
+    margin-left: 30px;
     text-decoration: none;
+    font-size: 19px;
+    display: block;
+}
+.introProduct__header > a:hover {
+    text-decoration: none;
+    color: white;
 }
 .product__desc {
     box-shadow: 0 30px 50px #b9b9b9;
@@ -699,24 +708,30 @@ select {
 .introProduct__desc {
     margin-top: 10px;
     line-height: 30px;
-}
-.relate {
-    padding: 40px;
+    padding: 10px 10px;
 }
 .header__ralate {
     background-color: #333;
-    padding: 15px;
     color: #fff;
+    height: 64px;
+    line-height: 64px;
+}
+.header__ralate  p {
+    margin-left: 30px;
+    font-size: 20px;
 }
 .relate__list-product {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
-    padding: 0 20px;
+    padding: 0 30px;
+    padding-bottom: 50px;
 }
-.relate__product {
+.relate {
+    width: 1459px;
+    background-color: #FFF;
     box-shadow: 0px 30px 50px #b9b9b9;
-    padding: 20px 0;
+    margin: 50px auto;
 }
 .intro__product-size > ul > li:hover {
     background-color: #333;
@@ -774,6 +789,15 @@ select {
 }
 .main-cart__table > table {
     width: 100%;
+}
+.no-product {
+    text-align: center;
+    color: #bb0909;
+    margin: 20px 0;
+}
+.container-pay__order {
+    text-align: center;
+    margin: 20px 0;
 }
 .main-cart__img {
     width: 102px;
@@ -848,7 +872,8 @@ textarea {
 }
 .container-pay__heading {
     text-align: center;
-    margin: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 50px;    
 }
 .cart__update {
     display: flex;
@@ -867,7 +892,178 @@ textarea {
 .btn-update:hover {
     opacity: 0.8;
 }
+.container-pay__img {
+    width: 150px;
+    height: 120px;
+    object-fit: contain;
+}
+.container-pay__table {
+    width: 100%;
+}
+.container-pay__order {
+    width: 1112px;
+    padding: 10px;
+    position: relative;
+}
+.container-pay__table > tbody > tr > td {
+    display: flex;
+}   
+.container-pay__table > tbody > tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0;
+    margin: 40px 0;
+}
+.container-pay__price {
+    color: #bb0909;
+    font-size: 22px;
+    font-weight: bold;
+}
+.container-pay__quantity {
+    position: absolute;
+    background-color: #A3A3A3;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 50%;
+    left: 130px;    
+}
+.container-pay__total {
+    text-align: left;
+    margin-top: 40px;
+}
+.main-cart__item-success i {
+    font-size: 60px;
+    color: #157347;
+}   
+.comment {
+    width: 1460px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 30px 50px #CCC;
+}
+.comment__header {
+    height: 64px;
+    background-color: #333;
+    line-height: 64px;
 
-
-
-
+}
+.comment__title {
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+}
+.comment__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #CCC;
+}
+.comment__quantity-comment {
+    font-weight: bold;
+}
+.comment__write {
+    padding: 0 20px;
+}
+.comment__item {
+    width: 1400px;
+    background-color: #FFF;
+    margin-top: 20px;
+    border-bottom: 1px solid #CCC;;
+    padding-bottom: 20px;
+}
+.comment__input {
+    width: 100%;
+    height: 72px;
+    padding: 10px;
+    border: 1px solid #CCC;
+}
+.comment__btn {
+    width: 100%;
+    background-color: #F5F6F7;
+    padding: 8px 10px;
+    border: 1px solid #CCC;
+    display: flex;
+    justify-content: end;
+}
+.comment__btn button {
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #4267B2;
+    padding: 3px;
+    border-radius: 2px;
+}
+.comment__btn button:hover { 
+    opacity: 0.9;
+}
+.comment_user {
+    margin-top: 30px;
+    display: flex;
+    padding: 0 20px;
+}
+.comment__img  img {
+    width: 51px;
+    height: 70px;   
+    object-fit: contain;
+}
+.comment__info {
+    margin-left: 8px;
+}
+.comment__link {
+    color: #0B5ED7;
+    font-weight: bold;
+    text-decoration: none;
+}
+.comment__name,.comment__content {
+    margin: 0;
+}
+.comment__content {
+    font-size: 15px;
+    margin: 2px 0;
+}
+.comment__body {
+    padding-bottom: 20px;
+}
+.comment__sort {    
+    border: 1px solid #CCC;
+    padding: 4px;
+    position: relative; 
+    height: 35px;
+    cursor: pointer;
+}
+.comment__menu-child {
+    position: absolute;
+    top: 112%;
+    background-color: #FFF;
+    width: 120px;
+    box-shadow: 0 30px 50px #CCC;
+    left: 0;
+    border: 1px solid#CCC;
+    display: none;
+}
+.comment__menu-child::before {
+    content: "";
+    width: 118px;
+    height: 10px;
+    position: absolute;
+    top: -10px;
+}
+.comment__sort:hover .comment__menu-child {
+    display: block;
+}
+.comment__menu-child > li {
+    list-style: none;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid #CCC;
+}
+.comment__menu-child > li > a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+.comment__menu-child > li > a:hover {
+    color: #bb0909;
+}

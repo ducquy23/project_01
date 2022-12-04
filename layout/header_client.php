@@ -1,6 +1,12 @@
 <?php
 // echo $_SESSION['user']['id'];
 $role = isset($_SESSION['user']) ? $_SESSION['user']['role'] : "";
+$count = 0;
+if (isset($_SESSION['cart'])) {
+    foreach ($_SESSION['cart']['buy'] as $values) {
+        $count++;
+    }
+}
 // echo $role;
 ?>
 <!DOCTYPE html>
@@ -13,7 +19,7 @@ $role = isset($_SESSION['user']) ? $_SESSION['user']['role'] : "";
     <title>Trang chủ</title>
     <link rel="stylesheet" href="/public/css/client/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -33,10 +39,10 @@ $role = isset($_SESSION['user']) ? $_SESSION['user']['role'] : "";
                     <?php } else if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 1) { ?>
                         <li>Xin chào: <?php echo $_SESSION['user']['fullname'] ?> | </li>
                         <li><a href="?role=client&mod=login&action=logout">Đăng xuất</a></li>
-                    <?php }else { ?>
-                    <li><a href="?role=client&mod=login">Đăng nhập</a></li>
-                    <li><a href="?role=client&mod=register">Đăng ký</a></li>
-                    <?php }?>
+                    <?php } else { ?>
+                        <li><a href="?role=client&mod=login">Đăng nhập</a></li>
+                        <li><a href="?role=client&mod=register">Đăng ký</a></li>
+                    <?php } ?>
                     <li>
                         <a href=""><img src="/public/images/img_client/logo_vietnamese.png" alt=""></a>
                         <a href=""><img src="/public/images/img_client/logo_english.png" alt=""></a>
@@ -71,18 +77,14 @@ $role = isset($_SESSION['user']) ? $_SESSION['user']['role'] : "";
                         </ul>
                     </li>
                 </ul>
-                <div class="header__search">
-                    <input type="text" placeholder="Tìm kiếm sản phẩm">
-                    <button type="submit">Tìm kiếm</button>
-                </div>
                 <div class="header__manage">
                     <a href=""><i class='bx bx-user-circle'></i></a>
                     <label for="nav-input"><a href="?role=client&mod=cart"><i class='bx bx-cart'></i></a></label>
-                    <!-- <span class="header__quantity">0</span> -->
+                    <span class="header__quantity"><?php echo $count ?></span>
                 </div>
             </div>
             <input type="checkbox" id="nav-input" class="nav-input" style="opacity: 0;">
-            <div class="card" style="position: fixed;right: 7px;top: 0px;">
+            <!-- <div class="card" style="position: fixed;right: 7px;top: 0px;">
                 <div class="card__name">
                     <p class="cart">Giỏ hàng</p>
                     <label for="nav-input">
@@ -106,4 +108,4 @@ $role = isset($_SESSION['user']) ? $_SESSION['user']['role'] : "";
                         <button>Thanh toán</button>
                     </div>
                 </div>
-            </div>
+            </div> -->

@@ -39,7 +39,7 @@
                 <div href="" class="price_product"><?php echo number_format($values['price']) ?><sup><u>đ</u></sup></div>
                 <div class="main__btn">
                     <a href="?role=client&mod=cart&id=<?php echo $values['id'] ?>"><button class="btn-add">Thêm vào giỏ</button></a>
-                    <button class="btn-buy">Mua ngay</button>
+                    <a href="?role=client&mod=cart&action=pay&id=<?php echo $values['id'] ?>"><button class="btn-buy">Mua ngay</button></a>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -62,14 +62,14 @@
                 <div class="price_product"><?php echo number_format($values['price'],) ?><sup><u>đ</u></sup></div>
                 <div class="main__btn">
                     <a href="?role=client&mod=cart&id=<?php echo $values['id'] ?>"><button class="btn-add">Thêm vào giỏ</button></a>
-                    <button class="btn-buy">Mua ngay</button>
+                    <a href="?role=client&mod=cart&action=pay&id=<?php echo $values['id'] ?>"><button class="btn-buy">Mua ngay</button></a>
                 </div>
             </div>
         <?php endforeach; ?>
     </div>
     <div class="main__football">
         <div class="main__name">
-            <h2>Sản phẩm bán chạy</h2>
+            <h2>Sản phẩm đặc biệt</h2>
         </div>
     </div>
     <div id="main__topProduct">
@@ -83,8 +83,8 @@
         <?php endforeach; ?>
     </div>
     <div class="main__btnchange">
-        <div id="pre"><i class='fas fa-angle-left'></i></div>
-        <div id="next"><i class='fas fa-angle-right'></i></div>
+        <div id="pre"><i class='bx bx-skip-previous'></i></div>
+        <div id="next"><i class='bx bx-skip-next' ></i></div>    
     </div>
 
 </div>

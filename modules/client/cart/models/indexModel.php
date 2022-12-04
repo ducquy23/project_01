@@ -1,4 +1,12 @@
 <?php 
+function get_list_categories_football() {
+    $result = db_fetch_array("SELECT * FROM `categories` WHERE parent_id = 1");
+    return $result;
+}
+function get_list_categories_shoes() {
+    $result = db_fetch_array("SELECT * FROM `categories` WHERE parent_id = 4");
+    return $result;
+}
 function get_product_by_id($id) {
     $result = db_fetch_row("SELECT * FROM products WHERE id = {$id}");
     return $result;
@@ -28,4 +36,28 @@ function update_cart($quantity) {
     }
     update_info_cart();
 }
-?>
+function insert_order ($fullname,$email,$address,$phone,$amount,$order_date) {
+    $id = db_insert('orders',
+    ['fullname' => $fullname,
+    'email' => $email,
+    'address' => $address,
+    'phone' => $phone,
+    'amount' => $amount,
+    'order_date' => $order_date
+    ]);
+    return $id;
+}
+function insert_order_detail ($price,$quantity,$sub_total,$product_id,$orders_id) {
+    $id = db_insert('order_details',[
+    'price' => $price,
+    'quantity' => $quantity,
+    'total' => $sub_total,
+    'products_id' => $product_id,
+    'orders_id' => $orders_id
+    ]);
+    return $id;
+}
+function get_id_order() {
+    $result = db_fetch_row("SELECT id from orders ORDER BY id DESC LIMIT 1");
+    return $result;
+}

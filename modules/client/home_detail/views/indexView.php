@@ -1,4 +1,5 @@
-<?php get_header('', 'Chi tiết sản phẩm');?>
+<?php get_header('', 'Chi tiết sản phẩm');
+?>
 <style>
     .footer {
         margin-top: 100px;
@@ -30,7 +31,7 @@
                 | Mã sản phẩm:<?php echo $info_detail_product['product_id'] ?>
             </div>
             <div class="intro__product-price">
-               <?php echo number_format($info_detail_product['price']) . "Đ" ?>
+                <?php echo number_format($info_detail_product['price']) . "Đ" ?>
             </div>
             <div class="intro__product-size">
                 <p>Kích thước:</p>
@@ -39,8 +40,6 @@
                     <li>39</li>
                     <li>40</li>
                     <li>41</li>
-                    <li>42</li>
-                    <li>42</li>
                     <li>42</li>
                 </ul>
             </div>
@@ -51,42 +50,46 @@
                 </div>
                 <div class="intro__product-btn">
                     <a href="?role=client&mod=cart&id=<?php echo $info_detail_product['product_id'] ?>"><button>Thêm vào giỏ hàng</button></a>
-                    <button>Mua ngay</button>
+                    <a href="?role=client&mod=cart&action=pay&id=<?php echo $info_detail_product['product_id'] ?>"><button>Mua ngay</button></a>
                 </div>
             </div>
         </div>
     </div>
     <div class="introProduct">
-        <div class="product__desc">
-            <div class="introProduct__header">
-                <a href="">THÔNG TIN SẢN PHẨM</a>
-                <a href="">ĐÁNH GIÁ</a>
-            </div>
-            <div class="introProduct__desc">
-               <?php echo $info_detail_product['description'] ?>
-            </div>
+        <div class="introProduct__header">
+            <a href="">THÔNG TIN SẢN PHẨM</a>
+        </div>
+        <div class="introProduct__desc">
+            <?php echo $info_detail_product['description'] ?>
         </div>
     </div>
+    <div class="comment">
+
+    </div>
     <div class="relate">
-        <div class="relate__product">
-            <div class="header__ralate">
-                SẢN PHẨM CÙNG LOẠI
-            </div>
-            <div class="relate__list-product">
-                <?php foreach($list_categories_related as $values) : ?>
-                    <div class="main__product">
-                        <a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><img src="/public/uploads/<?php echo $values['thumbnail'] ?>" alt="" class="img_product"></a>
-                        <div class="title_product"><a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></div>
-                        <div class="price_product"><?php echo number_format($values['price']) ?><sup><u>đ</u></sup></div>
-                        <div class="main__btn">
-                            <button class="btn-add">Thêm vào giỏ</button>
-                            <button class="btn-buy">Mua ngay</button>
-                        </div>
+        <div class="header__ralate">
+            <p>SẢN PHẨM CÙNG LOẠI</p>
+        </div>
+        <div class="relate__list-product">
+            <?php foreach ($list_categories_related as $values) : ?>
+                <div class="main__product">
+                    <a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><img src="/public/uploads/<?php echo $values['thumbnail'] ?>" alt="" class="img_product"></a>
+                    <div class="title_product"><a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></div>
+                    <div class="price_product"><?php echo number_format($values['price']) ?><sup><u>đ</u></sup></div>
+                    <div class="main__btn">
+                        <button class="btn-add">Thêm vào giỏ</button>
+                        <button class="btn-buy">Mua ngay</button>
                     </div>
-                <?php endforeach; ?>
-            </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 
 </div>
 <?php get_footer('', 'Chi tiết sản phẩm') ?>
+<script>
+    $(document).ready(function() {
+        $(".comment").load("?role=client&mod=home_detail&action=view_comment",
+        {id_prd:<?php echo $info_detail_product['product_id'] ?>} );
+    })
+</script>
