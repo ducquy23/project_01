@@ -11,21 +11,21 @@
         <thead class="table-dark">
             <tr>
                 <th>#</th>
-                <th>Content</th>
-                <th>Product_id</th>
-                <th>User_id</th>
+                <th>Nội dung</th>
+                <th>Tên sản phẩm</th>
+                <th>Người bình luận</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
         <?php foreach($comments as $values ): ?>
             <tr>
-                <td><?php echo $values['id'] ?></td>
+                <td><?php echo $values['comment_id'] ?></td>
                 <td><?php echo $values['content'] ?></td>
-                <td><?php echo $values['product_id'] ?></td>
-                <td><?php echo $values['users_id'] ?></td>
+                <td><?php echo $values['title'] ?></td>
+                <td><?php echo $values['fullname'] ?></td>
                 <td style="text-align: center;">
-                <a href="?role=admin&mod=category&action=delete&id=<?php echo $values['id'] ?>" onclick="return confirm('Bạn có muốn xóa không')"><button class="btn btn-danger">Delete</button></a>
+                <a href="?role=admin&mod=comments&action=delete&id=<?php echo $values['comment_id'] ?>" onclick="return confirm('Bạn có muốn xóa không')"><button class="btn btn-danger">Delete</button></a>
                 </td>
             </tr>
         </tbody>

@@ -14,7 +14,7 @@
         <thead class="table-dark">
             <tr>
                 <th>#</th>
-                <th>Orderer Fullname</th>
+                <th>Fullname</th>
                 <th>Email</th>
                 <th>Address</th>
                 <th>Order_date</th>
@@ -32,20 +32,21 @@
                     <td><?php echo $values['fullname'] ?></td>
                     <td><?php echo $values['email']  ?></td>
                     <td><?php echo $values['address']  ?></td>
-                    <td><?php echo $values['order_date']  ?></td>
+                    <td style="width: 100px;"><?php echo $values['order_date']  ?></td>
 
-                    <td><?php if ($values['status'] == 0) {
-                            echo 'Đơn đã giao';
-                        } elseif ($values['status'] == 1) {
-                            echo 'Đơn đang vận chuyển';
-                        } else {
-                            echo 'Đơn bị hủy';
-                        } ?></td>
-
-                    <td style=""><?php echo $values['phone'] ?></td>
-                    <td><?php echo $values['amount'] ?></td>
-                    <td style="width: 200px;text-align: center;">
-                        <!-- <a href="?role=admin&mod=orders&action=update&id=<?php echo $values['id'] ?>"><button class="btn btn-success">Update</button></a> -->
+                    <td style="width: 200px;">
+                    <select name="" id="" style="padding: 5px;">
+                        <option value=""><?php echo ($values['status'] == 0) ? "Đặt hàng thành công" : "Đặt hàng thất bại" ?></option>  
+                        <option value="">Đang giao hàng</option> 
+                        <option value="">Đã giao hàng</option> 
+                    </select>
+                    
+                    </td>
+                    <td style=""><?php echo "0". $values['phone'] ?></td>
+                    <td><?php echo number_format($values['amount']) . "đ" ?></td>
+                    <td style="width: 120px;text-align: center;">
+                        <a href="?role=admin&mod=orders&action=detail&id=<?php echo $values['id'] ?>"><button class="btn btn-info">Details </button></a>
+                        <a href=""><button style="margin-top: 6px;" class="btn btn-success">Update</button></a>
                         <a href="?role=admin&mod=orders&action=delete&id=<?php echo $values['id'] ?>" onclick="return confirm('Bạn có muốn xóa không')"><button class="btn btn-danger" style="margin-top: 10px;">Delete</button></a>
                     </td>
 

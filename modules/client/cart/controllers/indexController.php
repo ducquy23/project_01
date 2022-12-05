@@ -108,7 +108,7 @@ function ordersPostAction()
     }
     if(isset($_SESSION['cart'])) {
         $amount = $_SESSION['cart']['infor']['total'];
-        $order_date = date("h:i:sa - d/m/Y");
+        $order_date = date("h:i:s - d/m/Y");
         insert_order($fullname,$email,$address,$phone,$amount,$order_date);
         $order = get_id_order();
         foreach($_SESSION['cart']['buy'] as $values) {

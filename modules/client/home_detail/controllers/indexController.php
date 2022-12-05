@@ -19,7 +19,7 @@ function commentPostAction()
     $content = $_POST['content'];
     $id_prd = $_POST['id_prd'];
     $id_user = $_POST['id_user'];
-    $comment_date = date('h:i:s - d/m/Y');
+    $comment_date = date('d/m/Y');
     insert_comment($content, $id_prd, $id_user, $comment_date);
     header("location:" . $_SERVER['HTTP_REFERER']);
 }

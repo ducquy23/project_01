@@ -56,10 +56,10 @@ $notification = get_notification();
                             <a href=""><i class='bx bx-cart-add'></i></a>
                             <span><a href="?role=admin&mod=orders">Quản lý đơn hàng</a></span>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href=""><i class='bx bx-cart'></i></a>
                             <span><a href="?role=admin&mod=ordersDetails">Thông tin chi tiết đơn hàng</a></span>
-                        </li>
+                        </li> -->
                         <li>
                             <a href=""><i class='bx bx-comment-dots'></i></a>
                             <span><a href="?role=admin&mod=comments">Quản lý bình luận</a></span>
@@ -83,7 +83,7 @@ $notification = get_notification();
                 </div>
                 <div class="intro">
                     <a href=""><img src="/public/images/Vector.png" alt=""></a>
-                    <p class="name-user">Xin chào,<span class="name">Đức Quý</span></p>
+                    <p class="name-user">Xin chào,<span class="name"><?php echo (isset($_SESSION['user'])) ? $_SESSION['user']['fullname'] : "" ?></span></p>
                     <a href=""><img src="/public/images/img_admin/user-1.jpg" alt="" style="width: 50px;"></a>
                 </div>
             </header>
