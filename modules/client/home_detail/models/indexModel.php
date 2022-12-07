@@ -15,7 +15,7 @@ function get_list_categories_football() {
     return $result;
 }
 function get_list_categories_shoes() {
-    $result = db_fetch_array("SELECT * FROM `categories` WHERE parent_id = 4");
+    $result = db_fetch_array("SELECT * FROM `categories` WHERE parent_id = 25");
     return $result;
 }
 function insert_comment($content,$id_prd,$id_user,$comment_date) {
@@ -30,4 +30,12 @@ function get_list_comment($id) {
     $result = db_fetch_array("SELECT * FROM comments INNER JOIN users ON comments.users_id = 
     users.id WHERE products_id = $id GROUP BY comments.id DESC"); 
     return $result;
+}
+function get_list_img_by_id($id) {
+    $result = db_fetch_array("SELECT * FROM images WHERE products_id = $id");
+    return $result;
+}
+function get_img_by_id($id) {
+   $result =  db_fetch_row("SELECT thumbnail FROM images WHERE id = $id");
+   return $result;
 }

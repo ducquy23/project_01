@@ -18,4 +18,18 @@ function detailAction() {
     // show_array( $data['list_products_detail']);
 
 }
-?> 
+function status_orderPostAction() {
+    $id = $_GET['id'];
+    $status = $_POST['status'];
+    update_status_order($id, $status);
+    push_notification('success',['Cập nhập trạng thái thành công']);
+    header("location:?role=admin&mod=orders");
+}
+function deleteAction() {
+    $id = $_GET['id'];
+    delete_order_detail($id);
+    delete_order($id);
+    push_notification('success',['Xóa đơn hàng thành công']);
+    header("location:?role=admin&mod=orders");
+
+}

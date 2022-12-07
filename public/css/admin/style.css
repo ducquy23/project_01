@@ -210,3 +210,24 @@ h3 {
 .back-link:hover {
     text-decoration: none;
 }
+.box-thongke {
+    margin-top: 30px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box-item {
+    width: 300px;
+    height: 130px;
+    background-color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.box-item__heading {
+    color: white;
+}
+.box-item p {
+    color: #fff;
+    margin: 5px 0px 0px 0px;
+}

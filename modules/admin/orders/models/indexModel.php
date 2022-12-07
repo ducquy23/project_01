@@ -14,3 +14,19 @@ function get_list_product_orders($id)
     $result = db_fetch_array("SELECT * FROM order_details inner join products on products.id = order_details.products_id WHERE orders_id = $id");
     return $result;
 }
+function update_status_order($id, $status)
+{
+    db_update('orders', [
+        'status' => $status
+    ], "id = $id");
+    return true;
+}
+function delete_order_detail($id) {
+    db_delete('order_details', "orders_id = $id");
+    return true;
+}
+function delete_order($id)
+{
+    db_delete('orders', "id = $id");
+    return true;
+}

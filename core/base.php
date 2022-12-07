@@ -6,7 +6,7 @@ session_start();
 // get Controller name
 function get_controller() {
     global $config;
-    $controller = isset($_GET['controller']) ? $_GET['controller'] : $config['default_controller'];
+    $controller = isset($_GET['controller']) ? $_GET['controller'] : $config['default_controller']; 
     return $controller;
 }
 
@@ -31,11 +31,11 @@ function get_action() {
     return $action;
 }
 
-function load($type, $name) {
+function load($type, $name) { // helper,data
     if ($type == 'lib')
         $path = LIBPATH . DIRECTORY_SEPARATOR . "{$name}.php";
     if ($type == 'helper')
-        $path = HELPERPATH . DIRECTORY_SEPARATOR . "{$name}.php";
+        $path = HELPERPATH . DIRECTORY_SEPARATOR . "{$name}.php"; //data.php
     if (file_exists($path)) {
         require "$path";
     } else {

@@ -13,11 +13,9 @@
 <div class="main">
     <div class="intro">
         <ul class="intro__list-product">
-            <li><a href=""><img src="/public/images/img_client/shoes_soccer_01.png" alt=""></a></li>
-            <li><a href=""><img src="/public/images/img_client/shoes_soccer_02.png" alt=""></a></li>
-            <li><a href=""><img src="/public/images/img_client/shoes_soccer_03.png" alt=""></a></li>
-            <li><a href=""><img src="/public/images/img_client/shoes_soccer_04.png" alt=""></a></li>
-            <li><a href=""><img src="/public/images/img_client/shoes_soccer_05.png" alt=""></a></li>
+            <?php foreach ($list_img as $values) : ?>
+                <li><a href="?role=client&mod=home_detail&id=<?php echo $info_detail_product['product_id']?>&id_cate=<?php echo $info_detail_product['categories_id'] ?>&id_img=<?php echo $values['id'] ?>"><img src="/public/uploads/<?php echo $values['thumbnail'] ?>" alt=""></a></li>
+            <?php endforeach; ?>
         </ul>
         <div class="intro__img-detail">
             <a href=""><img src="/public/uploads/<?php echo $info_detail_product['thumbnail'] ?>" alt=""></a>
@@ -89,7 +87,8 @@
 <?php get_footer('', 'Chi tiết sản phẩm') ?>
 <script>
     $(document).ready(function() {
-        $(".comment").load("?role=client&mod=home_detail&action=view_comment",
-        {id_prd:<?php echo $info_detail_product['product_id'] ?>} );
+        $(".comment").load("?role=client&mod=home_detail&action=view_comment", {
+            id_prd: <?php echo $info_detail_product['product_id'] ?>
+        });
     })
 </script>

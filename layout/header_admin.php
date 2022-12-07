@@ -56,17 +56,21 @@ $notification = get_notification();
                             <a href=""><i class='bx bx-cart-add'></i></a>
                             <span><a href="?role=admin&mod=orders">Quản lý đơn hàng</a></span>
                         </li>
-                        <!-- <li>
-                            <a href=""><i class='bx bx-cart'></i></a>
-                            <span><a href="?role=admin&mod=ordersDetails">Thông tin chi tiết đơn hàng</a></span>
-                        </li> -->
+                        <li>
+                            <a href=""><i class='bx bx-image-alt'></i></a>
+                            <span><a href="?role=admin&mod=images">Quản lý ảnh sản phẩm</a></span>
+                        </li>
                         <li>
                             <a href=""><i class='bx bx-comment-dots'></i></a>
                             <span><a href="?role=admin&mod=comments">Quản lý bình luận</a></span>
                         </li>
                         <li>
                             <a href=""><i class='bx bx-bar-chart-alt-2' ></i></a>
-                            <span><a href="?role=admin&mod=thongke">Thống kê</a></span>
+                            <span><a href="?role=admin&mod=thongke">Thống Sản phẩm</a></span>
+                        </li>
+                        <li>
+                            <a href=""><i class='bx bx-objects-horizontal-left'></i></a>
+                            <span><a href="?role=admin&mod=orderstatistics">Thống kê đơn hàng</a></span>
                         </li>
                     </ul>
                 </div>

@@ -16,7 +16,7 @@ function get_list_categories_football() {
     return $result;
 }
 function get_list_categories_shoes() {
-    $result = db_fetch_array("SELECT * FROM `categories` WHERE parent_id = 4");
+    $result = db_fetch_array("SELECT * FROM `categories` WHERE parent_id = 25");
     return $result;
 }
 function get_list_product_by_id_cate_football($id) {

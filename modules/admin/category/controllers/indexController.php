@@ -14,9 +14,16 @@ function indexAction()
 function deleteAction()
 {
     $id = $_GET['id'];
-    delete_categories($id);
-    push_notification('success', ['Xoá danh mục sản phẩm thành công']);
-    header("location:?role=admin&mod=category");
+    $product = get_product_by_id_cate($id);
+    if (!empty($product)) {
+        push_notification('danger', ['Vui lòng xóa hết sản phẩm thuộc danh mục trước']);
+        header("location:?role=admin&mod=category");
+        die();
+    } else {
+        delete_categories($id);
+        push_notification('success', ['Xoá danh mục sản phẩm thành công']);
+        header("location:?role=admin&mod=category");
+    }
 }
 function createAction()
 {

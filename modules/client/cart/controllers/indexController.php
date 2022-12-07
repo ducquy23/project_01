@@ -31,7 +31,7 @@ function indexAction()
         $data['total'] = $total;
         load_view('index', $data);
     }
-    load_view('index');
+    load_view('index',$data);
 }
 function deleteAction()
 {

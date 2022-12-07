@@ -28,3 +28,7 @@ function update_category($id, $name) {
     ], "id = $id");
     return true;
 }
+function get_product_by_id_cate($id) {
+    $result = db_fetch_array("SELECT * FROM products WHERE categories_id = $id");
+    return $result;
+}

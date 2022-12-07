@@ -5,8 +5,11 @@ function construct() {
 }
 
 function indexAction() {
-    $data['thongke'] = get_list_thongke();
+    $data['list_thong_ke'] = get_list_thongke();
     load_view('index', $data);
-    
 }
+function bieudoAction() {
+    $data['list_thong_ke'] = get_list_thongke();
+    load_view('bieudo',$data);
+ }
 ?>

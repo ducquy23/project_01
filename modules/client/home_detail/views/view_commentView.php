@@ -49,13 +49,13 @@ foreach ($list_comment as $values) {
         </div>
         <div class="comment__write">
             <form action="?role=client&mod=home_detail&action=comment" method="POST">
-                <div class="comment__item">
+                <!-- <div class="comment__item">
                     <input type="text" name="content" placeholder="Viết bình luận" class="comment__input" disabled>
                     <div class="comment__btn">
                         <button type="submit" disabled>Đăng</button>
                     </div>
-                </div>
-                <h4 class="alert alert-danger text-center">Đăng nhập để bình luận</h4>
+                </div> -->
+                <h4 class="alert alert-danger text-center" style="margin-top: 10px;">Đăng nhập để bình luận</h4>
             </form>
         </div>
         <?php foreach ($list_comment as $values) : ?>

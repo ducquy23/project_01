@@ -15,8 +15,7 @@ define('APPPATH', $app_path);
  */
 $core_folder = 'core';
 define('COREPATH', APPPATH.DIRECTORY_SEPARATOR.$core_folder);
-// project/core
-
+// C:\xampp\htdocs\project_01\core
 /*
  * --------------------------------------------------------------------
  * modules path
@@ -60,4 +59,5 @@ $config_folder= 'config';
 define('CONFIGPATH', APPPATH.DIRECTORY_SEPARATOR.$config_folder);
 
 require COREPATH.DIRECTORY_SEPARATOR.'appload.php'; //require file appload.php vào
+// core/appload.php
 
