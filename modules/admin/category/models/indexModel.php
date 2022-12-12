@@ -1,7 +1,7 @@
 <?php
 function get_list_categories()
 {
-    $result = db_fetch_array("SELECT * FROM `categories`");
+    $result = db_fetch_array("SELECT * FROM `categories` WHERE `parent_id` > 0");
     return $result;
 }
 function delete_categories($id)

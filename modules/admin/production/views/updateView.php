@@ -18,12 +18,11 @@
 
         <div class="form-group">
             <label for="type">Danh mục Product:</label>
-            <select name="categories" id="" class="form-control">
-                <option value="<?php echo $data_update_production['categories_id'] ?>" selected>
+            <select name="categories" id="" class="form-control">   
+                <option value="<?php echo $data_update_production['categories_id'] ?>" hidden>
                     <?php
                     echo $data_update_production['name_cate'];
-                    ?>
-                    <?php ?>
+                    ?>      
                 </option>
                 <?php foreach ($all_categories as $values) :?>
                 <option value="<?php echo $values['id'] ?>">
@@ -33,9 +32,9 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="type">Thương hiệu Product:</label>
+            <label for="type">Thương hiệu Product:</label>  
             <select name="brands" id="" class="form-control">
-                <option value="<?php echo $data_update_production['brands_id'] ?>" selected>
+                <option value="<?php echo $data_update_production['brands_id'] ?>" hidden>
                     <?php
                     echo $data_update_production['name_brand'];
                     ?>

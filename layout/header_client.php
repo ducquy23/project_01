@@ -58,24 +58,7 @@ if (isset($_SESSION['cart'])) {
                     </li>
                     <li><a href="#">LIÊN HỆ</a>
                     </li>
-                    <li>
-                        <a href="?role=client&mod=home_collections&id=5&parent_id=1">GIÀY</a>
-                        <a href=""><i class='bx bx-chevron-down'></i></a>
-                        <ul class="header__submenu">
-                            <?php foreach ($home_list_cate_football as $values) : ?>
-                                <li><a href="?role=client&mod=home_collections&id=<?php echo $values['id'] ?>&parent_id=<?php echo $values['parent_id'] ?>"><?php echo $values['name'] ?> </a></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="?role=client&mod=home_collections&id=20&parent_id=4">BÓNG</a>
-                        <a href=""><i class='bx bx-chevron-down'></i></a>
-                        <ul class="header__submenu">
-                            <?php foreach ($home_list_cate_shoes as $values) : ?>
-                                <li><a href="?role=client&mod=home_collections&id=<?php echo $values['id'] ?>&parent_id=<?php echo $values['parent_id'] ?>"><?php echo $values['name'] ?></a></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </li>
+                    <li><a href="#">THÔNG BÁO</a></li>
                 </ul>
                 <div class="header__manage">
                     <a href=""><i class='bx bx-user-circle'></i></a>
@@ -84,28 +67,3 @@ if (isset($_SESSION['cart'])) {
                 </div>
             </div>
             <input type="checkbox" id="nav-input" class="nav-input" style="opacity: 0;">
-            <!-- <div class="card" style="position: fixed;right: 7px;top: 0px;">
-                <div class="card__name">
-                    <p class="cart">Giỏ hàng</p>
-                    <label for="nav-input">
-                        <i class='bx bx-message-square-x'></i>
-                    </label>
-                </div>
-                <div class="card__title">
-                    <a href=""><i class='bx bx-cart bx-card-1'></i></a>
-                    <p>Hiện chưa có sản phẩm</p>
-                    <hr class="card__line">
-                </div>
-                <div class="card__money">
-                    <div class="card__total">Tổng tiền:</div>
-                    <div class="card__price">0 <sup><u>đ</u></sup></div>
-                </div>
-                <div class="card__btn">
-                    <div class="card__view">
-                       <a href="?role=client&mod=cart"><button>Xem giỏ hàng</button></a>
-                    </div>
-                    <div class="card__pay">
-                        <button>Thanh toán</button>
-                    </div>
-                </div>
-            </div> -->

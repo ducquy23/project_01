@@ -14,8 +14,6 @@ function indexAction()
         $data['info_detail_product'] = get_product_by_id($id);
         $data['info_detail_product']['thumbnail'] = $img['thumbnail'];
         $data['list_categories_related'] = get_product_by_category($id_cate);
-        $data['home_list_cate_football'] = get_list_categories_football();
-        $data['home_list_cate_shoes'] = get_list_categories_shoes();
         $data['list_img'] = get_list_img_by_id($id);
         load_view('index', $data);
     } else {
@@ -23,8 +21,6 @@ function indexAction()
         $id_cate = $_GET['id_cate'];
         $data['info_detail_product'] = get_product_by_id($id);
         $data['list_categories_related'] = get_product_by_category($id_cate);
-        $data['home_list_cate_football'] = get_list_categories_football();
-        $data['home_list_cate_shoes'] = get_list_categories_shoes();
         $data['list_img'] = get_list_img_by_id($id);
         load_view('index', $data);
     }

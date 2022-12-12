@@ -1,30 +1,26 @@
 <?php
-function get_list_product_shoes() {
-    $result = db_fetch_array("SELECT * FROM `products` WHERE categories_id = 5 LIMIT 8");
-    return $result;
-}
-function get_list_product_football() {
-    $result = db_fetch_array("SELECT * FROM `products` WHERE categories_id = 20 LIMIT 8");
-    return $result;
-}
 function get_list_product_special() {
     $result = db_fetch_array("SELECT * FROM `products` WHERE special = 1");
     return $result;
 }
-function get_list_categories_football() {
-    $result = db_fetch_array("SELECT * FROM `categories` WHERE parent_id = 1");
+function get_list_product() {
+    $result = db_fetch_array("SELECT * FROM `products` LIMIT 12");
     return $result;
 }
-function get_list_categories_shoes() {
-    $result = db_fetch_array("SELECT * FROM `categories` WHERE parent_id = 25");
+function get_list_categories() {
+    $result = db_fetch_array("SELECT * FROM `categories`");
     return $result;
 }
-function get_list_product_by_id_cate_football($id) {
+function get_list_brand() {
+    $result = db_fetch_array("SELECT * FROM `brands`");
+    return $result;
+}
+function get_product_by_category_id($id) {
     $result = db_fetch_array("SELECT * FROM `products` WHERE categories_id = $id");
     return $result;
 }
-function get_list_product_by_id_cate_shoes($id) {
-    $result = db_fetch_array("SELECT * FROM `products` WHERE categories_id = $id");
+function get_product_by_brand_id($id) {
+    $result = db_fetch_array("SELECT * FROM `products` WHERE brands_id = $id");
     return $result;
 }
 

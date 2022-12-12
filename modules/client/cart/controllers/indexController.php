@@ -5,8 +5,6 @@ function construct()
 }
 function indexAction()
 {
-    $data['home_list_cate_football'] = get_list_categories_football();
-    $data['home_list_cate_shoes'] = get_list_categories_shoes();
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
         $product = get_product_by_id($id);
@@ -52,8 +50,6 @@ function indexPostAction()
 }
 function payAction()
 {
-    $data['home_list_cate_football'] = get_list_categories_football();
-    $data['home_list_cate_shoes'] = get_list_categories_shoes();
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
         $product = get_product_by_id($id);

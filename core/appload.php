@@ -28,7 +28,7 @@ if (is_array($autoload)) {
     foreach ($autoload as $type => $list_auto) {
         if (!empty($list_auto)) {
             foreach ($list_auto as $name) {
-                load($type, $name);
+                load($type, $name); // helper,data
             }
         }
     }

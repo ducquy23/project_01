@@ -2,7 +2,6 @@
 
 function construct()
 {
-    //    echo "Dùng chung, load đầu tiên";
     load_model('index');
 }
 

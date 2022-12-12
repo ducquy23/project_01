@@ -77,14 +77,14 @@ body {
 }
 
 .header__search {
-    background-color: #ececec;
+    /* background-color: #ececec; */
     padding: 8px;
     border-radius: 6px;
 }
 
 .header__search > form > input {
     outline: none;
-    border: none;
+    border: 1px solid #333;
     padding: 5px;
     border-radius: 5px;
 }
@@ -92,7 +92,7 @@ body {
 .header__search > form > button {
     outline: none;
     border: none;
-    background-color: #e1d8d9;
+    background-color: #CCC;
     padding: 8px;
     border-radius: 5px;
     font-size: 14px;

@@ -12,7 +12,7 @@ if (file_exists($request_path)) {
 // get method if get default null
 $method = $_SERVER['REQUEST_METHOD'] === 'GET' ? '' : $_SERVER['REQUEST_METHOD'];
 //server method kiểm tra phương thức yêu cầu là gì: nếu là GET = '',nếu 'POST'
-$action_name = get_action().ucfirst(strtolower($method)).'Action'; //deleteAction
+$action_name = get_action().ucfirst(strtolower($method)).'Action'; //updatePostAction
 
 call_function(array('construct', $action_name));
 
