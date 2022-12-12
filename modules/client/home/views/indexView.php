@@ -68,8 +68,8 @@
                 <div class="title_product"><a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></div>
                 <div class="price_product"><?php echo number_format($values['price']) ?><sup><u>đ</u></sup></div>
                 <div class="main__btn">
-                    <a href="?role=client&mod=cart&id=<?php $values['id'] ?>"><button class="btn-add">Thêm vào giỏ</button></a>
-                    <a href="?role=client&mod=cart&action=pay&id=<?php $values['id'] ?>"><button class="btn-buy">Mua ngay</button></a>
+                    <a href="?role=client&mod=cart&id=<?php echo  $values['id'] ?>"><button class="btn-add">Thêm vào giỏ</button></a>
+                    <a href="?role=client&mod=cart&action=pay&id=<?php echo $values['id'] ?>"><button class="btn-buy">Mua ngay</button></a>
                 </div>
             </div>
         <?php endforeach; ?>
