@@ -11,6 +11,13 @@
             <input type="text" name="price" class="form-control" placeholder="Enter price" id="price">
         </div>
         <div class="form-group">
+            <label for="special">Product Special:</label>
+            <select name="special" id="" class="form-control">
+                <option value="0">Không đặc biệt</option>
+                <option value="1">Đặc biệt</option>
+            </select>
+        </div>
+        <div class="form-group">
             <label for="type">Danh mục Product:</label>
             <select name="type" id="" class="form-control">
                 <?php foreach ($list_categories as $values) : ?>
@@ -21,7 +28,7 @@
         <div class="form-group">
             <label for="type">Thương hiệu Product:</label>
             <select name="brand" id="" class="form-control">
-            <?php foreach ($list_brands as $values) : ?>
+                <?php foreach ($list_brands as $values) : ?>
                     <option value="<?php echo $values['id']  ?>"><?php echo $values['name'] ?></option>
                 <?php endforeach; ?>
             </select>

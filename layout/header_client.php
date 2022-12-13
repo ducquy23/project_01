@@ -17,6 +17,7 @@ if (isset($_SESSION['cart'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="/public/css/client/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -61,7 +62,9 @@ if (isset($_SESSION['cart'])) {
                     <li><a href="#">THÔNG BÁO</a></li>
                 </ul>
                 <div class="header__manage">
-                    <a href=""><i class='bx bx-user-circle'></i></a>
+                    <?php if (isset($_SESSION['user'])) { ?>
+                        <a href="?role=client&mod=account"><i class='bx bx-user-circle'></i></a>
+                    <?php } ?>
                     <label for="nav-input"><a href="?role=client&mod=cart"><i class='bx bx-cart'></i></a></label>
                     <span class="header__quantity"><?php echo $count ?></span>
                 </div>

@@ -40,22 +40,11 @@ function slideshow() {
 
 }
 slideshow()
-// function activeProduct() {
-//     let product_football = document.querySelectorAll(".item__football");
-//     let product__shoes = document.querySelectorAll(".item__shoes");
-//     product_football.forEach((item, index) => {
-//         item.addEventListener("click", function (item) {
-//             item.preventDefault();
-//             document.querySelector(".item__football.active").classList.remove("active");
-//             this.classList.add("active");
-//         })
-//     })
-//     product__shoes.forEach((item, index) => {
-//         item.addEventListener("click", function (item) {
-//             item.preventDefault();
-//             document.querySelector(".item__shoes.active").classList.remove("active");
-//             this.classList.add("active");
-//         })
-//     })
-// }
-// activeProduct();
+
+$(document).ready(function(){
+    $('#main-outstanding__product').slick({
+        slidesToShow: 4,
+        autoplay:true,
+        autoplaySpeed:3500,    
+    });
+  });

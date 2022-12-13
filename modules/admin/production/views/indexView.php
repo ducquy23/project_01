@@ -21,8 +21,7 @@
                 <th>Description</th>
                 <th>Categories</th>
                 <th>Brands</th>
-                <th>Action</th>
-
+                <th>Action</th> 
             </tr>
         </thead>
         <tbody>

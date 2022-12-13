@@ -15,10 +15,12 @@ function indexAction()
         $data['info_detail_product']['thumbnail'] = $img['thumbnail'];
         $data['list_categories_related'] = get_product_by_category($id_cate);
         $data['list_img'] = get_list_img_by_id($id);
+        update_view($id);
         load_view('index', $data);
     } else {
         $id = $_GET['id'];
         $id_cate = $_GET['id_cate'];
+        update_view($id);
         $data['info_detail_product'] = get_product_by_id($id);
         $data['list_categories_related'] = get_product_by_category($id_cate);
         $data['list_img'] = get_list_img_by_id($id);

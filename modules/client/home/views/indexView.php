@@ -74,6 +74,28 @@
             </div>
         <?php endforeach; ?>
     </div>
+    <!-- PAGING -->
+    <?php if (isset($_GET['id_cate']) || isset($_GET['id_brand']) || isset($_GET['name'])) { ?>
+
+    <?php } else { ?>
+        <div class="home-paging">
+            <div class="">
+                <a href="?per_page=<?php echo $item_per_page ?>&page=1"><i class='fas fa-long-arrow-alt-left arrow_paging'></i></a>
+            </div>
+            <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+                <?php if ($i != $current_page) { ?>
+                    <a href="?per_page=<?php echo $item_per_page ?>&page=<?php echo $i ?>" class="btn-paging "><?php echo $i ?></a>
+                <?php } else { ?>
+                    <a href="?per_page=<?php echo $item_per_page ?>&page=<?php echo $i ?>" class="btn-paging btn-pading--strong"><?php echo $i ?></a>
+                <?php } ?>
+            <?php endfor; ?>
+
+            <div class="">
+                <a href="?per_page=<?php echo $item_per_page ?>&page=<?php echo $totalPages ?>"><i class='fas fa-long-arrow-alt-right arrow_paging'></i></a>
+            </div>
+        </div>
+    <?php } ?>
+    <!-- END-PAGING -->
     <div class="main__football">
         <div class="main__name">
             <h2>Sản phẩm đặc biệt</h2>
@@ -93,9 +115,26 @@
         <div id="pre"><i class='bx bx-skip-previous'></i></div>
         <div id="next"><i class='bx bx-skip-next'></i></div>
     </div>
+    <div class="main-outstanding">
+        <h2 class="main-outstanding__title">Sản phẩm nổi bật</h2>
+        <div id="main-outstanding__product">
+            <?php foreach($home_product_outstanding as $values) : ?>
+            <div class="main-outstanding__item">
+                <a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>">
+                    <img src="/public/uploads/<?php echo $values['thumbnail'] ?>" alt="" class="main-outstanding__item-img">
+                </a>
+                <p class="main-outstanding__item-title"><a href="?role=client&mod=home_detail&id=<?php echo $values['id'] ?>&id_cate=<?php echo $values['categories_id'] ?>"><?php echo $values['title'] ?></a></p>
+                <p class="main-outstanding__price"><?php echo number_format($values['price']) . "đ" ?></p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
 
 </div>
 <!-- end-main -->
 
 <!-- footer -->
-<?php get_footer('', 'Giao diện trang chủ') ?>
+<?php get_footer('', 'Giao diện trang chủ'); ?>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

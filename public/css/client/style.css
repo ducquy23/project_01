@@ -165,7 +165,7 @@ body {
     margin-top: 20px;
 }
 .main__topProduct {
-    height: 400px;
+    height: 350px;
 }
 
 .main__name>h2 {
@@ -369,7 +369,7 @@ body {
     position: absolute;
     left: 20px;
     cursor: pointer;
-    top: 100px;
+    top: -270px;
     z-index: 19999;
     border: 1px solid black;
     padding: 5px 9px;
@@ -385,7 +385,7 @@ body {
     right: 20px;
     cursor: pointer;
     z-index: 19999;
-    top: 100px;
+    top: -270px;
     border: 1px solid black;
     padding: 5px 9px;
     border-radius: 50%;
@@ -1070,4 +1070,106 @@ textarea {
 }
 .comment__menu-child > li > a:hover {
     color: #bb0909;
+}
+.home-paging {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+.arrow_paging {
+    font-size: 37px;
+    cursor: pointer;
+    color: #CCC;
+}
+.arrow_paging:hover {
+    color: #000;
+}
+.btn-paging {
+    text-decoration: none;
+    color: #FFF;
+    margin: 0 12px;
+    background-color: #CCC;
+    padding: 7px 15px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+.btn-paging:hover {
+    color: #FFF;
+    text-decoration: none;
+    background-color: #000;
+}
+.btn-pading--strong {
+    background-color: #000;
+    color: #fff;
+}
+.main-outstanding__title { 
+    text-align: center;
+    margin-bottom: 50px;
+}
+.main-outstanding {
+    width: 1340px;
+    margin: 0 auto;
+    height: 500px;
+}
+#main-outstanding__product {
+    position: relative;
+}
+.main-outstanding__item {
+    width: 310px;
+    height: 400px;
+}
+.main-outstanding__item-img {
+    /* width: 100%;     */
+    width: 300px;
+    height: 300px;
+}
+
+.main-outstanding__item-title {
+    margin: 10px 0;
+}
+.main-outstanding__item-title a {
+    color: #000;
+    font-size: 17px;
+}
+.main-outstanding__item-title a:hover {
+    color: #bb0909;
+    text-decoration: none;
+}
+.main-outstanding__price {
+    font-size: 20px;
+    color: gray;
+    font-weight: bold;
+}
+.slick-prev {
+    position: absolute;
+    left: -80px;
+    top: 150px;
+    outline: none;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    padding: 2px;
+}
+.slick-next {
+    position: absolute;
+    right: -70px;
+    top: 150px;
+    outline: none;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    padding: 2px 20px;
+}
+.main-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-account__form {
+    width: 400px;
+    height: 200px;
+    background-color: rgb(242, 240, 240);
+    border-radius: 5px;
+}
+.main-account__header {
+    text-align: center;
 }

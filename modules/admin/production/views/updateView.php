@@ -15,34 +15,43 @@
             <label for="price">Giá Product:</label>
             <input type="text" name="price" class="form-control" placeholder="Enter price" id="price" value="<?php echo $data_update_production['price']  ?>">
         </div>
-
+        <div class="form-group">
+            <label for="special">Sản phẩm đặc biệt:</label>
+            <select name="special" id="" class="form-control">
+                <option value="<?php echo $data_update_production['product_id'] ?>" hidden>
+                    <?php echo ($data_update_production['special'] == 1) ? "Đặc biệt" : "Không đặc biệt" ?>
+                </option>
+                <option value="0">Không đặc biệt</option>
+                <option value="1">Đặc biệt</option>
+            </select>
+        </div>
         <div class="form-group">
             <label for="type">Danh mục Product:</label>
-            <select name="categories" id="" class="form-control">   
+            <select name="categories" id="" class="form-control">
                 <option value="<?php echo $data_update_production['categories_id'] ?>" hidden>
                     <?php
                     echo $data_update_production['name_cate'];
-                    ?>      
+                    ?>
                 </option>
-                <?php foreach ($all_categories as $values) :?>
-                <option value="<?php echo $values['id'] ?>">
-               <?php echo $values['name']; ?>
-                </option>
+                <?php foreach ($all_categories as $values) : ?>
+                    <option value="<?php echo $values['id'] ?>">
+                        <?php echo $values['name']; ?>
+                    </option>
                 <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">
-            <label for="type">Thương hiệu Product:</label>  
+            <label for="type">Thương hiệu Product:</label>
             <select name="brands" id="" class="form-control">
                 <option value="<?php echo $data_update_production['brands_id'] ?>" hidden>
                     <?php
                     echo $data_update_production['name_brand'];
                     ?>
                     <?php ?>
-                </option >
+                </option>
                 <?php foreach ($all_brands as $values) : ?>
                     <option value="<?php echo $values['id'] ?>">
-                    <?php echo $values['name']; ?>
+                        <?php echo $values['name']; ?>
                     </option>
                 <?php endforeach; ?>
             </select>
@@ -50,7 +59,7 @@
         <div class="form-group">
             <label for="img">Ảnh sản phẩm</label> <br>
             <td><img style="width: 100px;height: 100px;" src="/public/uploads/<?php echo $data_update_production['thumbnail'] ?> " alt=""></td>
-            <input type="hidden" name="name_image" value="<?php echo $data_update_production  ?>">
+            <input type="hidden" name="name_image" value="<?php echo $data_update_production['thumbnail']  ?>">
             <input type="file" name="img" id="img">
             <input type="hidden" name="id" value="<?php  ?>">
         </div>
