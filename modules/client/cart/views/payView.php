@@ -1,11 +1,6 @@
 <?php get_header('');
 $notification = get_notification();
 ?>
-<style>
-    .footer {
-        margin-top: 100px;
-    }
-</style>
 <div class="container-pay">
     <div class="container-pay__info">
         <h3 class="container-pay__heading">

@@ -164,6 +164,9 @@ body {
     text-align: center;
     margin-top: 20px;
 }
+.main__topProduct {
+    height: 400px;
+}
 
 .main__name>h2 {
     margin: 50px 0;
@@ -304,6 +307,7 @@ body {
     width: max-content;
     margin-top: 30px;
     margin: auto;
+    height: 400px;
     overflow: hidden;
     /* position: relative; */
 }
@@ -398,7 +402,7 @@ body {
 
 /* footer */
 .footer {
-    margin-top: 370px;
+    margin-top: 50px;
 }
 .footer__logo {
     text-align: center;

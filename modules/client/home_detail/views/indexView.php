@@ -1,10 +1,5 @@
 <?php get_header('', 'Chi tiết sản phẩm');
 ?>
-<style>
-    .footer {
-        margin-top: 100px;
-    }
-</style>
 <div class="header__collections">
     <a href="?role=client&mode=home">Trang chủ / </a>
     <!-- <a href="" style="margin-left: 5px;"> Giày /</a> -->

@@ -3,11 +3,6 @@ $notification = get_notification();
 // show_array($list_users);
 ?>
 <body>
-    <style>
-        .footer {
-            margin-top: 100px;
-        }
-    </style>
     <div class="container">
         <h2 style="margin: 30px 0;">Create Account</h2>
         <div class="notification">

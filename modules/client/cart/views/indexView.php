@@ -8,11 +8,6 @@ if (isset($cart)) {
     }
 }
 ?>
-<style>
-    .footer {
-        margin-top: 100px;
-    }
-</style>
 <div class="header-bottom">
     <p class="header-bottom__home">
         <a href="?role=client&mod=home" class="header-bottom__link">Trang chủ / </a>

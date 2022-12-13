@@ -3,11 +3,6 @@ $notification = get_notification();
 ?>
 
 <body>
-    <style>
-        .footer {
-            margin-top: 100px;
-        }
-    </style>
     <div class="container">
         </p>
         <!-- <p style="font-size: 20px ;">Welcome Donglucsport</p> -->

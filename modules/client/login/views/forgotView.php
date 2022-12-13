@@ -1,12 +1,6 @@
 <?php get_header('', "Quên mật khẩu");
 $notification = get_notification();
 ?>
-<style>
-    .footer {
-        margin-top: 100px;
-    }
-</style>
-
 <body>
     <div class="container">
         <form action="?role=client&mod=login&action=forgot" method="POST">
